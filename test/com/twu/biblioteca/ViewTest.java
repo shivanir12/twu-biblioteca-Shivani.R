@@ -31,7 +31,7 @@ public class ViewTest {
     public void showTheWelcomeMessage(){
 
         View view = new View();
-        view.showTheWelcomeMessage();
+        view.show("WELCOME TO BIBLIOTECA");
         assertEquals("WELCOME TO BIBLIOTECA", outputContent.toString());
     }
 
