@@ -10,7 +10,8 @@ public class Main {
         View view = new View();
         Application application = new Application(view);
         application.showWelcomeMessage();
-        ArrayList<HashMap<String, String>> bookList = application.listOfBooks();
-        application.displayList(bookList);
+        //ArrayList<HashMap<String, String>> bookList = application.listOfBooks();
+       // application.displayList(bookList);
+        application.displayMainMenu();
     }
 }

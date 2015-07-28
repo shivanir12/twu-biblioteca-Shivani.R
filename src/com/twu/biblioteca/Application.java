@@ -3,6 +3,8 @@ package com.twu.biblioteca;
 import java.util.HashMap;
 import java.util.*;
 
+import static java.lang.System.exit;
+
 public class Application {
 
     private final View view;
@@ -40,4 +42,26 @@ public class Application {
         }
 
     }
+
+    public void displayMainMenu(){
+        view.show("Main Menu");
+        view.show("Enter 1 to display list of books");
+        view.show("Enter 2 to exit");
+        Scanner input = new Scanner(System.in);
+        while(true) {
+            int choice = input.nextInt();
+            switch (choice) {
+                case 1:
+                    ArrayList<HashMap<String, String>> bookList = listOfBooks();
+                    displayList(bookList);
+                    break;
+                case 2:
+                    System.exit(0);
+                default:
+                    view.show("Enter a valid option");
+            }
+        }
+
+    }
+
 }

@@ -24,19 +24,7 @@ public class ApplicationTest {
     public void showListOfBooks() {
         View view = mock(View.class);
         Application application = new Application(view);
-        /*HashMap<String, String> book1 = new HashMap<>();
-        book1.put("name", "head first java");
-        book1.put("author", "Ds");
-        book1.put("year Published", "ada");
 
-        HashMap<String, String> book2 = new HashMap<>();
-        book2.put("name", "Harry potter");
-        book2.put("author", "J K Rolling");
-        book2.put("year Published", "1980");
-
-        ArrayList<HashMap<String, String>> bookList = new ArrayList<>();
-        bookList.add(book1);
-        bookList.add(book2);*/
         HashMap<String, String> book1 = new HashMap<>();
         book1.put("Name Of Book", "Head First Java");
         book1.put("Author", "Sierra");
@@ -57,4 +45,5 @@ public class ApplicationTest {
         verify(view).show("Head First Java\tSierra\t1950");
         verify(view).show("WWW\tRobert\t1947");
     }
+
 }
