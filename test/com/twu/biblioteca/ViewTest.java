@@ -6,12 +6,8 @@ import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-
 import static org.junit.Assert.assertEquals;
+
 
 public class ViewTest {
 
@@ -36,7 +32,7 @@ public class ViewTest {
 
         View view = new View();
         view.show("WELCOME TO BIBLIOTECA");
-        assertEquals("WELCOME TO BIBLIOTECA", outputContent.toString());
+        assertEquals("WELCOME TO BIBLIOTECA\n", outputContent.toString());
     }
 }
 
