@@ -5,44 +5,22 @@ import java.util.HashMap;
 
 public class Library {
     private final View view;
-    private Book book;
-    //ArrayList<Book> bookList =
+    ArrayList<Book> bookList;
 
-    public Library(View view, Book book) {
+    public Library(View view, ArrayList<Book> bookList) {
         this.view = view;
-        this.book = book;
+        this.bookList = bookList;
     }
 
-    public ArrayList<HashMap<String, String>> loadBooksToLibrary() {
 
-        HashMap<String, String> book1 = new HashMap<>();
-        book1.put("Book No", "1");
-        book1.put("Name Of Book", "Head First Java");
-        book1.put("Author", "Sierra");
-        book1.put("Year Published", "1950");
-        book1.put("Accessibility", "Accessible");
+    public void displayListOf() {
+        //String headerOfBookList = String.format("%-20s%-20s%-20s%-20s%-20s", "Book No", "Name Of Book", "Author", "Year Published", "Accessibility");
+        //view.show(headerOfBookList);
+        //view.show("============================================================================================================");
 
-        HashMap<String, String> book2 = new HashMap<>();
-        book2.put("Book No", "2");
-        book2.put("Name Of Book", "WWW");
-        book2.put("Author", "Robert");
-        book2.put("Year Published", "1947");
-        book2.put("Accessibility", "Accessible");
-
-        ArrayList<HashMap<String, String>> bookList = new ArrayList<>();
-        bookList.add(book1);
-        bookList.add(book2);
-        return bookList;
-    }
-
-    public void displayListOf(ArrayList<HashMap<String, String>> bookList) {
-        String headerOfBookList = String.format("%-20s%-20s%-20s%-20s%-20s", "Book No", "Name Of Book", "Author", "Year Published", "Accessibility");
-        view.show(headerOfBookList);
-        view.show("============================================================================================================");
-
-        for (HashMap<String, String> book : bookList) {
-            String bookDetails = String.format("%-20s%-20s%-20s%-20s%-20s", book.get("Book No"),
-                    book.get("Name Of Book"), book.get("Author"), book.get("Year Published"), book.get("Accessibility"));
+        for (Book book : bookList) {
+            String bookDetails = String.format("%-20s%-20s%-20s%-20s%-20s", book.getBookNo(),book.getBookName(),
+                    book.getAuthor(),book.getYearOfPublication(),book.getAccessibility());
             view.show(bookDetails);
         }
 

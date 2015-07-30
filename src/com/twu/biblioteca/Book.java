@@ -2,20 +2,42 @@ package com.twu.biblioteca;
 
 public class Book {
 
+    private final String bookNo;
+    private final String bookName;
+    private final String author;
+    private final String yearOfPublication;
+    private final String accessibility;
 
-    private int book_no;
-    private String name;
-    private String author;
-    private String year_published;
-    private String accessibility;
+    public Book(String bookNo, String bookName, String author, String yearOfPublication, String accessibility){
 
-    public void Book(int book_no, String name, String author, String year_published, String accessibility){
-
-        this.book_no = book_no;
-        this.name = name;
+        this.bookNo = bookNo;
+        this.bookName = bookName;
         this.author = author;
-        this.year_published = year_published;
+        this.yearOfPublication = yearOfPublication;
         this.accessibility = accessibility;
     }
 
+    public String getAccessibility() {
+        return accessibility;
+    }
+
+    public String getYearOfPublication() {
+
+        return yearOfPublication;
+    }
+
+    public String getAuthor() {
+
+        return author;
+    }
+
+    public String getBookName() {
+
+        return bookName;
+    }
+
+    public String getBookNo() {
+
+        return bookNo;
+    }
 }

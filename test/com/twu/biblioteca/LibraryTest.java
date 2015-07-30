@@ -14,14 +14,17 @@ public class LibraryTest {
     @Test
     public void showListOfBooks() {
         View view = mock(View.class);
-        Book book = new Book();
-        Library library = new Library(view, book);
+        Book book1 = new Book("1","Head First Java", "sierra", "1950", "Accessible");
+        Book book2 = new Book("2","WWW", "robert", "1950", "Accessible");
+        ArrayList<Book> bookList = new ArrayList<>();
+        bookList.add(book1);
+        bookList.add(book2);
+        Library library = new Library(view, bookList);
 
-        ArrayList<HashMap<String, String>> bookList = library.loadBooksToLibrary();
-        library.displayListOf(bookList);
+        library.displayListOf();
 
-        verify(view).show("1                   Head First Java     Sierra              1950                Accessible          ");
-        verify(view).show("2                   WWW                 Robert              1947                Accessible          ");
+        verify(view).show("1                   Head First Java     sierra              1950                Accessible          ");
+        verify(view).show("2                   WWW                 robert              1950                Accessible          ");
     }
 
 }
