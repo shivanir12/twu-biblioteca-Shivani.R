@@ -7,13 +7,13 @@ import static org.junit.Assert.assertEquals;
 public class BookTest {
     @Test
     public void toCheckIfBookIsAvailable(){
-        Book book1 = new Book("1","Head First Java", "sierra", "1950", "accessibility");
+        Book book1 = new Book("1","Head First Java", "sierra", "1950", "accessible");
         assertEquals(true, book1.checkIfBookIsAvailable("1"));
     }
 
     @Test
     public void toCheckIfBookIsNotAvailable(){
-        Book book1 = new Book("1","Head First Java", "sierra", "1950", "accessibility");
+        Book book1 = new Book("1","Head First Java", "sierra", "1950", "accessible");
         assertEquals(false, book1.checkIfBookIsAvailable("2"));
     }
 
@@ -25,7 +25,7 @@ public class BookTest {
 
     @Test
     public void toCheckIfTheBookReturnedIsInvalid(){
-        Book book1 = new Book("1","Head First Java", "sierra", "1950", "accessibility");
-        assertEquals(false, book1.returnBook("1"));
+        Book book1 = new Book("1","Head First Java", "sierra", "1950", "not accessible");
+        assertEquals(false, book1.returnBook("2"));
     }
 }

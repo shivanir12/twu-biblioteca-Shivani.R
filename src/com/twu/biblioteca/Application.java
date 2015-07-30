@@ -18,7 +18,13 @@ public class Application {
         view.show("================================");
         view.show("Enter 1 to display list of books");
         view.show("Enter 2 to checkout book");
-        view.show("Enter 3 to exit");
+        view.show("Enter 3 to return book");
+        view.show("Enter 4 to exit");
     }
 
+    public void startUp() {
+        while (true) {
+            displayMainMenu();
+        }
+    }
 }

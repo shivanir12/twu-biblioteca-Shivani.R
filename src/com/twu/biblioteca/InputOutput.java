@@ -3,7 +3,7 @@ package com.twu.biblioteca;
 
 import java.util.Scanner;
 
-public class View {
+public class InputOutput {
 
     Scanner input = new Scanner(System.in);
 

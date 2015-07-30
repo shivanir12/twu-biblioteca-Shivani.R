@@ -10,18 +10,20 @@ public class Library {
         this.view = view;
         this.bookList = bookList;
     }
+    public void displayHeader(){
+        String headerOfBookList = String.format("%-20s%-20s%-20s%-20s", "Book No", "Name Of Book", "Author", "Year Published");
+        view.show(headerOfBookList);
+        view.show("=========================================================================================");
+
+    }
 
 
     public void displayListOf() {
-        String headerOfBookList = String.format("%-20s%-20s%-20s%-20s%-20s", "Book No", "Name Of Book", "Author", "Year Published", "Accessibility");
-        view.show(headerOfBookList);
-        view.show("============================================================================================================");
-
         for (Book book : bookList) {
             String isAccessible = book.getAccessibility();
-            if (isAccessible == "accessibility") {
-                String bookDetails = String.format("%-20s%-20s%-20s%-20s%-20s", book.getBookNo(), book.getBookName(),
-                        book.getAuthor(), book.getYearOfPublication(), book.getAccessibility());
+            if (isAccessible == "accessible") {
+                String bookDetails = String.format("%-20s%-20s%-20s%s", book.getBookNo(), book.getBookName(),
+                        book.getAuthor(), book.getYearOfPublication());
                 view.show(bookDetails);
             }
         }
@@ -43,7 +45,7 @@ public class Library {
     public void checkInBook(String input) {
         int flag = 0;
         for (Book book : bookList) {
-            if (book.checkIfBookIsAvailable(input)) {
+            if (book.returnBook(input)) {
                 view.show("Thank you for returning the book");
                 flag = 1;
             }

@@ -4,18 +4,22 @@ public class Dispatcher {
 
     private final View view;
     private final Library library;
+    private Application application;
 
-    public Dispatcher(View view, Library library) {
+    public Dispatcher(View view, Library library, Application application) {
 
         this.view = view;
         this.library = library;
+        this.application = application;
     }
 
     public void dispatch() {
-        while (true) {
+        while(true) {
+            application.displayMainMenu();
             int choice = view.getIntegerInput();
             switch (choice) {
                 case 1:
+                    library.displayHeader();
                     library.displayListOf();
                     break;
                 case 2:
@@ -28,7 +32,6 @@ public class Dispatcher {
                     input = view.getStringInput();
                     library.checkInBook(input);
                     break;
-
                 case 4:
                     System.exit(0);
                 default:

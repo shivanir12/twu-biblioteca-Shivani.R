@@ -23,12 +23,13 @@ public class ApplicationTest {
         Application application = new Application(view);
 
         application.displayMainMenu();
+        view.show("--*Main Menu*--");
+        view.show("================================");
+        view.show("Enter 1 to display list of books");
+        view.show("Enter 2 to checkout book");
+        view.show("Enter 3 to return book");
+        view.show("Enter 4 to exit");
 
-        verify(view).show("--*Main Menu*--");
-        verify(view).show("================================");
-        verify(view).show("Enter 1 to display list of books");
-        verify(view).show("Enter 2 to checkout book");
-        verify(view).show("Enter 3 to exit");
     }
 
 }

@@ -8,13 +8,13 @@ public class Book {
     private final String yearOfPublication;
     private String accessibility;
 
-    public Book(String bookNo, String bookName, String author, String yearOfPublication, String accessibility){
+    public Book(String bookNo, String bookName, String author, String yearOfPublication, String accessible){
 
         this.bookNo = bookNo;
         this.bookName = bookName;
         this.author = author;
         this.yearOfPublication = yearOfPublication;
-        this.accessibility = accessibility;
+        this.accessibility = accessible;
     }
 
     public String getAccessibility() {
@@ -41,7 +41,7 @@ public class Book {
         return bookNo;
     }
     boolean checkIfBookIsAvailable(String input) {
-        if(bookNo.equals(input) && accessibility == "accessibility") {
+        if(bookNo.equals(input) && accessibility == "accessible") {
             accessibility = "not accessible";
             return true;
         }
@@ -51,7 +51,7 @@ public class Book {
 
     boolean returnBook(String input) {
         if(bookNo.equals(input) && accessibility == "not accessible") {
-            accessibility = "accessibility";
+            accessibility = "accessible";
             return true;
         }
         else
