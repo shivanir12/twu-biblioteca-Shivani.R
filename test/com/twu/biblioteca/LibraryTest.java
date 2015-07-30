@@ -27,4 +27,21 @@ public class LibraryTest {
         verify(view).show("2                   WWW                 robert              1950                Accessible          ");
     }
 
+    @Test
+    public void checkoutBook(){
+        View view = mock(View.class);
+        Book book1 = new Book("1","Head First Java", "sierra", "1950", "Accessible");
+        Book book2 = new Book("2","WWW", "robert", "1950", "Accessible");
+        ArrayList<Book> bookList = new ArrayList<>();
+        bookList.add(book1);
+        bookList.add(book2);
+        Library library = new Library(view, bookList);
+
+
+
+    }
+
+
+
+
 }

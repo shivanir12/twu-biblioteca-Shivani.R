@@ -12,15 +12,16 @@ public class Dispatcher {
     }
 
     public void dispatch() {
-        while (true)
-        {
+        while (true) {
             int choice = view.getIntegerInput();
             switch (choice) {
                 case 1:
-                    //library.displayListOf(bookList);
+                    library.displayListOf();
                     break;
                 case 2:
                     view.show("Enter the book number to checkout");
+                    int input = view.getIntegerInput();
+                    library.checkoutBook("input");
                     break;
                 case 3:
                     System.exit(0);

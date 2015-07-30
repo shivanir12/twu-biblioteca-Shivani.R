@@ -1,7 +1,6 @@
 package com.twu.biblioteca;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Library {
     private final View view;
@@ -14,9 +13,9 @@ public class Library {
 
 
     public void displayListOf() {
-        //String headerOfBookList = String.format("%-20s%-20s%-20s%-20s%-20s", "Book No", "Name Of Book", "Author", "Year Published", "Accessibility");
-        //view.show(headerOfBookList);
-        //view.show("============================================================================================================");
+        String headerOfBookList = String.format("%-20s%-20s%-20s%-20s%-20s", "Book No", "Name Of Book", "Author", "Year Published", "Accessibility");
+        view.show(headerOfBookList);
+        view.show("============================================================================================================");
 
         for (Book book : bookList) {
             String bookDetails = String.format("%-20s%-20s%-20s%-20s%-20s", book.getBookNo(),book.getBookName(),
@@ -25,4 +24,15 @@ public class Library {
         }
 
     }
+
+    public void checkoutBook(String input) {
+        for(Book book : bookList){
+            if(book.checkIfBookIsAvailable(input))
+                view.show("Thank U!!! enjoy the book");
+            else
+                view.show("Book is not available");
+        }
+    }
+
+
 }

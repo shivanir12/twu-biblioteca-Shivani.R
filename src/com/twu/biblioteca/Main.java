@@ -22,6 +22,7 @@ public class Main {
 
         Library library = new Library(view, bookList);
         Dispatcher dispatcher = new Dispatcher(view,library);
+        dispatcher.dispatch();
 
     }
 }

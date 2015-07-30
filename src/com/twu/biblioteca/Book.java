@@ -6,7 +6,7 @@ public class Book {
     private final String bookName;
     private final String author;
     private final String yearOfPublication;
-    private final String accessibility;
+    private String accessibility;
 
     public Book(String bookNo, String bookName, String author, String yearOfPublication, String accessibility){
 
@@ -39,5 +39,13 @@ public class Book {
     public String getBookNo() {
 
         return bookNo;
+    }
+    boolean checkIfBookIsAvailable(String input) {
+        if(bookNo.equals(input) && accessibility == "accessibility") {
+            accessibility = "not accessible";
+            return true;
+        }
+        else
+            return false;
     }
 }
