@@ -18,21 +18,39 @@ public class Library {
         view.show("============================================================================================================");
 
         for (Book book : bookList) {
-            String bookDetails = String.format("%-20s%-20s%-20s%-20s%-20s", book.getBookNo(),book.getBookName(),
-                    book.getAuthor(),book.getYearOfPublication(),book.getAccessibility());
-            view.show(bookDetails);
+            String isAccessible = book.getAccessibility();
+            if (isAccessible == "accessibility") {
+                String bookDetails = String.format("%-20s%-20s%-20s%-20s%-20s", book.getBookNo(), book.getBookName(),
+                        book.getAuthor(), book.getYearOfPublication(), book.getAccessibility());
+                view.show(bookDetails);
+            }
         }
 
     }
 
     public void checkoutBook(String input) {
-        for(Book book : bookList){
-            if(book.checkIfBookIsAvailable(input))
+        int flag = 0;
+        for (Book book : bookList) {
+            if (book.checkIfBookIsAvailable(input)) {
                 view.show("Thank U!!! enjoy the book");
-            else
-                view.show("Book is not available");
+                flag = 1;
+            }
         }
+        if (flag == 0)
+            view.show("Book is not available");
     }
 
-
+    public void checkInBook(String input) {
+        int flag = 0;
+        for (Book book : bookList) {
+            if (book.checkIfBookIsAvailable(input)) {
+                view.show("Thank you for returning the book");
+                flag = 1;
+            }
+        }
+        if (flag == 0)
+            view.show("This is not a valid book to return");
+    }
 }
+
+

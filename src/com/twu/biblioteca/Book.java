@@ -48,4 +48,13 @@ public class Book {
         else
             return false;
     }
+
+    boolean returnBook(String input) {
+        if(bookNo.equals(input) && accessibility == "not accessible") {
+            accessibility = "accessibility";
+            return true;
+        }
+        else
+            return false;
+    }
 }

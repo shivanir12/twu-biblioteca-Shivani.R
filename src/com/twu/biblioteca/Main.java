@@ -12,9 +12,9 @@ public class Main {
         application.showWelcomeMessage();
         application.displayMainMenu();
 
-        Book book1 = new Book("1","Head First Java", "sierra", "1950", "Accessible");
-        Book book2 = new Book("2","WWW", "robert", "1950", "Accessible");
-        Book book3 = new Book("3","DS", "sahani", "1956", "Accessible");
+        Book book1 = new Book("1","Head First Java", "sierra", "1950", "accessibility");
+        Book book2 = new Book("2","WWW", "robert", "1950", "accessibility");
+        Book book3 = new Book("3","DS", "sahani", "1956", "accessibility");
         ArrayList<Book> bookList = new ArrayList<Book>();
         bookList.add(book1);
         bookList.add(book2);

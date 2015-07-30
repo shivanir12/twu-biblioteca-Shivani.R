@@ -20,10 +20,16 @@ public class Dispatcher {
                     break;
                 case 2:
                     view.show("Enter the book number to checkout");
-                    int input = view.getIntegerInput();
-                    library.checkoutBook("input");
+                    String input = view.getStringInput();
+                    library.checkoutBook(input);
                     break;
                 case 3:
+                    view.show("Enter the book number to return");
+                    input = view.getStringInput();
+                    library.checkInBook(input);
+                    break;
+
+                case 4:
                     System.exit(0);
                 default:
                     view.show("Enter a valid option");

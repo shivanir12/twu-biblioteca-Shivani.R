@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="newBibliotica" default="runjunit" basedir=".">
+<project name="newBibliotica" default="runjar" basedir=".">
 
     <property name="lib.dir" value="lib"/>
 
