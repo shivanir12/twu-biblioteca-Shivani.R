@@ -6,9 +6,12 @@ public class Main {
     public static void main(String[] args) {
         View view = new View();
         Library library = new Library(view);
-        Application application = new Application(view, library);
+        Application application = new Application(view);
         application.showWelcomeMessage();
         application.displayMainMenu();
-        library.loadBooksToLibrary();
+        //library.loadBooksToLibrary();
+        Dispatcher dispatcher = new Dispatcher(view,library);
+
+
     }
 }

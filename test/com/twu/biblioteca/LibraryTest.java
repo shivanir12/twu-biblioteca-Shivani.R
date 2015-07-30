@@ -19,7 +19,8 @@ public class LibraryTest {
         ArrayList<HashMap<String, String>> bookList = library.loadBooksToLibrary();
         library.displayListOf(bookList);
 
-        verify(view).show("Head First Java     Sierra              1950                ");
-        verify(view).show("WWW                 Robert              1947                ");
+        verify(view).show("1                   Head First Java     Sierra              1950                Accessible          ");
+        verify(view).show("2                   WWW                 Robert              1947                Accessible          ");
     }
+
 }
