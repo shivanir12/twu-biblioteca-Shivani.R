@@ -14,7 +14,8 @@ public class LibraryTest {
     @Test
     public void showListOfBooks() {
         View view = mock(View.class);
-        Library library = new Library(view);
+        Book book = new Book();
+        Library library = new Library(view, book);
 
         ArrayList<HashMap<String, String>> bookList = library.loadBooksToLibrary();
         library.displayListOf(bookList);

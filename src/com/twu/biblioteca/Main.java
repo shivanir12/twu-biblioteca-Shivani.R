@@ -5,7 +5,8 @@ public class Main {
 
     public static void main(String[] args) {
         View view = new View();
-        Library library = new Library(view);
+        Book book = new Book();
+        Library library = new Library(view, book);
         Application application = new Application(view);
         application.showWelcomeMessage();
         application.displayMainMenu();

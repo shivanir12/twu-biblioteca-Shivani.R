@@ -5,12 +5,16 @@ import java.util.HashMap;
 
 public class Library {
     private final View view;
+    private Book book;
+    //ArrayList<Book> bookList =
 
-    public Library(View view) {
+    public Library(View view, Book book) {
         this.view = view;
+        this.book = book;
     }
 
     public ArrayList<HashMap<String, String>> loadBooksToLibrary() {
+
         HashMap<String, String> book1 = new HashMap<>();
         book1.put("Book No", "1");
         book1.put("Name Of Book", "Head First Java");
