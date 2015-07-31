@@ -2,27 +2,27 @@ package com.twu.biblioteca;
 
 import java.util.ArrayList;
 
-public class Library {
-    private final View view;
-    ArrayList<Book> bookList;
 
-    public Library(View view, ArrayList<Book> bookList) {
+//Library class can display list of books, checkin and checkout books
+public class Library {
+    private final InputOutput view;
+    ArrayList<Book> availableBookList;
+
+    public Library(InputOutput view, ArrayList<Book> bookList) {
         this.view = view;
-        this.bookList = bookList;
+        this.availableBookList = bookList;
     }
-    public void displayHeader(){
-        String headerOfBookList = String.format("%-20s%-20s%-20s%-20s", "Book No", "Name Of Book", "Author", "Year Published");
+
+    public void displayHeader() {
+        String headerOfBookList = String.format("%-20s%-20s%-20s", "Name Of Book", "Author", "Year Published");
         view.show(headerOfBookList);
         view.show("=========================================================================================");
 
     }
 
-
     public void displayListOf() {
-        for (Book book : bookList) {
-            String isAccessible = book.getAccessibility();
-            if (isAccessible == "accessible") {
-                String bookDetails = String.format("%-20s%-20s%-20s%s", book.getBookNo(), book.getBookName(),
+        for (Book book : availableBookList) {
+                String bookDetails = String.format("%-20s%-20s%s", book.getBookName(),
                         book.getAuthor(), book.getYearOfPublication());
                 view.show(bookDetails);
             }
@@ -30,7 +30,7 @@ public class Library {
 
     }
 
-    public void checkoutBook(String input) {
+    /*public void checkoutBook(String input) {
         int flag = 0;
         for (Book book : bookList) {
             if (book.checkIfBookIsAvailable(input)) {
@@ -52,7 +52,6 @@ public class Library {
         }
         if (flag == 0)
             view.show("This is not a valid book to return");
-    }
-}
+    }*/
 
 

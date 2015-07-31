@@ -14,7 +14,6 @@ public class InputOutputTest {
     private final ByteArrayOutputStream outputContent = new ByteArrayOutputStream();
     private PrintStream original;
 
-
     @Test
     public void showMessage() {
         original = System.out;

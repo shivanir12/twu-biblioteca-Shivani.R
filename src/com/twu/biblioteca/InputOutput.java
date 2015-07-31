@@ -1,8 +1,9 @@
 package com.twu.biblioteca;
 
-
 import java.util.Scanner;
 
+
+//Accepts the input and output
 public class InputOutput {
 
     Scanner input = new Scanner(System.in);
@@ -11,12 +12,12 @@ public class InputOutput {
         System.out.println(message);
     }
 
-    public int getIntegerInput(){
+    public int getIntegerInput() {
         int integerInput = input.nextInt();
         return integerInput;
     }
 
-    public String getStringInput(){
+    public String getStringInput() {
         String stringInput = input.next();
         return stringInput;
     }

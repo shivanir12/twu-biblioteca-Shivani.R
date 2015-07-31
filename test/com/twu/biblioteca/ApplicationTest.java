@@ -7,9 +7,10 @@ import static org.mockito.Mockito.verify;
 
 
 public class ApplicationTest {
+
     @Test
     public void showTheWelcomeMessage() {
-        View view = mock(View.class);
+        InputOutput view = mock(InputOutput.class);
         Application application = new Application(view);
 
         application.showWelcomeMessage();
@@ -19,7 +20,7 @@ public class ApplicationTest {
 
     @Test
     public void showTheMainMenu() {
-        View view = mock(View.class);
+        InputOutput view = mock(InputOutput.class);
         Application application = new Application(view);
 
         application.displayMainMenu();
@@ -29,7 +30,5 @@ public class ApplicationTest {
         view.show("Enter 2 to checkout book");
         view.show("Enter 3 to return book");
         view.show("Enter 4 to exit");
-
     }
-
 }

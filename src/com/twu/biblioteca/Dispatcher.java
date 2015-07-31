@@ -1,12 +1,14 @@
 package com.twu.biblioteca;
 
+
+//Accepts the choice and calls the associated methods
 public class Dispatcher {
 
-    private final View view;
+    private final InputOutput view;
     private final Library library;
     private Application application;
 
-    public Dispatcher(View view, Library library, Application application) {
+    public Dispatcher(InputOutput view, Library library, Application application) {
 
         this.view = view;
         this.library = library;
@@ -14,7 +16,7 @@ public class Dispatcher {
     }
 
     public void dispatch() {
-        while(true) {
+        while (true) {
             application.displayMainMenu();
             int choice = view.getIntegerInput();
             switch (choice) {
@@ -25,12 +27,12 @@ public class Dispatcher {
                 case 2:
                     view.show("Enter the book number to checkout");
                     String input = view.getStringInput();
-                    library.checkoutBook(input);
+                    //library.checkoutBook(input);
                     break;
                 case 3:
                     view.show("Enter the book number to return");
                     input = view.getStringInput();
-                    library.checkInBook(input);
+                    //library.checkInBook(input);
                     break;
                 case 4:
                     System.exit(0);

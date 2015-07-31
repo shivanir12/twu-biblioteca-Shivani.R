@@ -1,11 +1,12 @@
 package com.twu.biblioteca;
 
 
+//This class displays the welcome message and main menu.
 public class Application {
 
-    private final View view;
+    private final InputOutput view;
 
-    public Application(View view) {
+    public Application(InputOutput view) {
         this.view = view;
     }
 

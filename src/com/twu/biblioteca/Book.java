@@ -1,24 +1,18 @@
 package com.twu.biblioteca;
 
+
+//represents the book entity and checks for the availability of book.
 public class Book {
 
-    private final String bookNo;
     private final String bookName;
     private final String author;
     private final String yearOfPublication;
-    private String accessibility;
 
-    public Book(String bookNo, String bookName, String author, String yearOfPublication, String accessible){
+    public Book(String bookName, String author, String yearOfPublication) {
 
-        this.bookNo = bookNo;
         this.bookName = bookName;
         this.author = author;
         this.yearOfPublication = yearOfPublication;
-        this.accessibility = accessible;
-    }
-
-    public String getAccessibility() {
-        return accessibility;
     }
 
     public String getYearOfPublication() {
@@ -36,25 +30,22 @@ public class Book {
         return bookName;
     }
 
-    public String getBookNo() {
-
-        return bookNo;
+    /*public boolean hasTitle(){
+        return bookName.equals();
     }
-    boolean checkIfBookIsAvailable(String input) {
-        if(bookNo.equals(input) && accessibility == "accessible") {
-            accessibility = "not accessible";
+
+    /*boolean checkIfBookIsAvailable(String input) {
+        if (bookName.equals(input)) {
             return true;
-        }
-        else
+        } else
             return false;
-    }
+    }*/
 
-    boolean returnBook(String input) {
-        if(bookNo.equals(input) && accessibility == "not accessible") {
+    /*boolean returnBook(String input) {
+        if (bookNo.equals(input) && accessibility == "not accessible") {
             accessibility = "accessible";
             return true;
-        }
-        else
+        } else
             return false;
-    }
+    }*/
 }
