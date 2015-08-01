@@ -15,6 +15,8 @@ public class Book {
         this.yearOfPublication = yearOfPublication;
     }
 
+
+
     public String getYearOfPublication() {
 
         return yearOfPublication;
@@ -30,22 +32,7 @@ public class Book {
         return bookName;
     }
 
-    /*public boolean hasTitle(){
-        return bookName.equals();
+    public boolean hasTitle(String name){
+        return bookName.equals(name);
     }
-
-    /*boolean checkIfBookIsAvailable(String input) {
-        if (bookName.equals(input)) {
-            return true;
-        } else
-            return false;
-    }*/
-
-    /*boolean returnBook(String input) {
-        if (bookNo.equals(input) && accessibility == "not accessible") {
-            accessibility = "accessible";
-            return true;
-        } else
-            return false;
-    }*/
 }

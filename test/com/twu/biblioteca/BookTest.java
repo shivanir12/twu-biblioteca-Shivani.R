@@ -6,28 +6,16 @@ import static org.junit.Assert.assertEquals;
 
 
 public class BookTest {
-/*
+
     @Test
     public void toCheckIfBookIsAvailable() {
         Book book1 = new Book("Head First Java", "sierra", "1950");
-        assertEquals(true, book1.checkIfBookIsAvailable("1"));
+        assertEquals(true, book1.hasTitle("Head First Java"));
     }
 
     @Test
     public void toCheckIfBookIsNotAvailable() {
         Book book1 = new Book("Head First Java", "sierra", "1950");
-        assertEquals(false, book1.checkIfBookIsAvailable("2"));
+        assertEquals(false, book1.hasTitle("java"));
     }
-
-    @Test
-    public void toCheckIfTheBookReturnedIsValid() {
-        Book book1 = new Book("Head First Java", "sierra", "1950");
-        assertEquals(true, book1.returnBook("1"));
-    }
-
-    @Test
-    public void toCheckIfTheBookReturnedIsInvalid() {
-        Book book1 = new Book("Head First Java", "sierra", "1950");
-        assertEquals(false, book1.returnBook("2"));
-    }*/
 }

@@ -20,6 +20,6 @@ public class Main {
         application.showWelcomeMessage();
         Dispatcher dispatcher = new Dispatcher(view, library, application);
         dispatcher.dispatch();
-
+        Parser paresr = new Parser(view, availableBookList);
     }
 }

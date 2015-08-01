@@ -35,16 +35,19 @@ public class LibraryTest {
         verify(view).show("Head First Java     sierra              1950");
         verify(view).show("WWW                 robert              1950");
     }
-/*
-    @Test
+
+    /*@Test
     public void checkoutTheBook() {
         InputOutput view = mock(InputOutput.class);
         Book book1 = new Book("Head First Java", "sierra", "1950");
+        Book book2 = new Book("WWW", "sierra", "1945");
         ArrayList<Book> bookList = new ArrayList<>();
         bookList.add(book1);
+        bookList.add(book2);
         Library library = new Library(view, bookList);
-        library.checkoutBook("1");
-        verify(view).show("Thank U!!! enjoy the book");
+        library.checkoutBook("Head First Java");
+
+        assertEquals(true,library.checkoutBook("Head First Java"));
     }
 
     @Test
@@ -54,19 +57,17 @@ public class LibraryTest {
         ArrayList<Book> bookList = new ArrayList<>();
         bookList.add(book1);
         Library library = new Library(view, bookList);
-        library.checkoutBook("2");
-        verify(view).show("Book is not available");
+        assertEquals(false, library.checkoutBook("Java"));
     }
 
-    @Test
+   /* @Test
     public void returnBookToTheLibraryIsSuccessful() {
         InputOutput view = mock(InputOutput.class);
         Book book1 = new Book("Head First Java", "sierra", "1950");
-        ArrayList<Book> bookList = new ArrayList<>();
-        bookList.add(book1);
-        Library library = new Library(view, bookList);
-        library.checkInBook("1");
-        verify(view).show("Thank you for returning the book");
+        ArrayList<Book> checkOutList = new ArrayList<>();
+        checkOutList.add(book1);
+        Library library = new Library(view, checkOutList);
+        assertEquals(true, library.checkInBook("Head First Java"));
     }
 
     @Test
@@ -76,7 +77,6 @@ public class LibraryTest {
         ArrayList<Book> bookList = new ArrayList<>();
         bookList.add(book1);
         Library library = new Library(view, bookList);
-        library.checkInBook("2");
-        verify(view).show("This is not a valid book to return");
+        assertEquals(false, library.checkInBook("java"));
     }*/
 }

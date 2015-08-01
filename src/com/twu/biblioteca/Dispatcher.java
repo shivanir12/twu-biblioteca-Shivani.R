@@ -21,19 +21,9 @@ public class Dispatcher {
             int choice = view.getIntegerInput();
             switch (choice) {
                 case 1:
-                    library.displayHeader();
-                    library.displayListOf();
+
                     break;
-                case 2:
-                    view.show("Enter the book number to checkout");
-                    String input = view.getStringInput();
-                    //library.checkoutBook(input);
-                    break;
-                case 3:
-                    view.show("Enter the book number to return");
-                    input = view.getStringInput();
-                    //library.checkInBook(input);
-                    break;
+
                 case 4:
                     System.exit(0);
                 default:
