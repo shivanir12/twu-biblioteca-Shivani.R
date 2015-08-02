@@ -21,6 +21,8 @@ public class Controller {
 
     public void dispatch() {
         while (true) {
+            LibraryOperation libraryOperation;
+            String bookName;
             application.displayMainMenu();
             String choice = view.getStringInput();
             switch (choice) {
@@ -29,24 +31,22 @@ public class Controller {
                     view.displayBookList(list);
                     break;
                 case "2":
-                    LibraryOperation libraryOperation = parser.parse(choice);
+                    libraryOperation = parser.parse(choice);
                     view.show("Enter the name of the book to checkout");
-                    String bookName = view.getStringInput();
-                    boolean isAvailable = libraryOperation.execute(library,bookName);
-                    if(isAvailable)
+                    bookName = view.getStringInput();
+                    if(libraryOperation.execute(library,bookName))
                         view.show("Thank you!! Enjoy the book");
                     else
                         view.show("Book is not available");
                     break;
                 case "3":
-                    LibraryOperation libraryOperation = parser.parse(choice);
-                    view.show("Enter the name of the book to checkout");
-                    String bookName = view.getStringInput();
-                    boolean isAvailable = libraryOperation.execute(library,bookName);
-                    if(isAvailable)
-                        view.show("Thank you!! Enjoy the book");
+                    libraryOperation = parser.parse(choice);
+                    view.show("Enter the name of the book to return");
+                    bookName = view.getStringInput();
+                    if(libraryOperation.execute(library,bookName))
+                        view.show("Thank you for returning the book");
                     else
-                        view.show("Book is not available");
+                        view.show("This is not a valid book to return");
                     break;
                 case "4":
                     System.exit(0);
