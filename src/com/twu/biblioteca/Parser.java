@@ -13,10 +13,9 @@ public class Parser {
         this.library = library;
     }
 
-    public LibraryOperation parse(int input) {
-        if(input == 2)
-            return new CheckOut(library);
-        return  null;
+    public LibraryOperation parse(String input) {
+        if(input.equals("2"))
+            return new CheckOut();
+        return null;
     }
-
 }

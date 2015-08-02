@@ -14,7 +14,7 @@ public class CheckOutTest {
         bookList.add(book1);
         ArrayList<Book> checkoutBookList = new ArrayList<>();
         Library library = new Library(bookList, checkoutBookList);
-        CheckOut checkOut = new CheckOut(library);
+        CheckOut checkOut = new CheckOut();
         boolean isAvailable = checkOut.execute(library, "Head First Java");
         assertEquals(true, isAvailable);
     }
@@ -26,7 +26,7 @@ public class CheckOutTest {
         bookList.add(book1);
         ArrayList<Book> checkoutBookList = new ArrayList<>();
         Library library = new Library(bookList, checkoutBookList);
-        CheckOut checkOut = new CheckOut(library);
+        CheckOut checkOut = new CheckOut();
         boolean isAvailable = checkOut.execute(library, "WWW");
         assertEquals(false, isAvailable);
     }

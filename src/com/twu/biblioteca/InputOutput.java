@@ -13,13 +13,11 @@ public class InputOutput {
     }
 
     public int getIntegerInput() {
-        int integerInput = input.nextInt();
-        return integerInput;
+        return input.nextInt();
     }
 
     public String getStringInput() {
-        String stringInput = input.next();
-        return stringInput;
+        return input.nextLine();
     }
 
     public void displayBookList(String list){

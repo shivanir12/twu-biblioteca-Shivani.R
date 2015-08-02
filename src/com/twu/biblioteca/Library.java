@@ -33,11 +33,12 @@ public class Library {
 
     public boolean checkoutBook(String name) {
         Book book = searchForBookInTheList(name, availableBookList);
-        if(!(book == null)){
+        if ((book == null)) {
+            return false;
+        } else {
             updateBookListAfterCheckOut(book);
             return true;
         }
-        return false;
     }
 
     private void updateBookListAfterCheckOut(Book book) {

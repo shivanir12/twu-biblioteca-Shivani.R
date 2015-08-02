@@ -33,6 +33,6 @@ public class Book {
     }
 
     public boolean hasTitle(String name){
-        return bookName.equals(name);
+        return bookName.equalsIgnoreCase(name);
     }
 }

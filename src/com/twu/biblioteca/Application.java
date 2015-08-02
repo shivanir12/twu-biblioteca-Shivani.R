@@ -22,10 +22,4 @@ public class Application {
         view.show("Enter 3 to return book");
         view.show("Enter 4 to exit");
     }
-
-    public void startUp() {
-        while (true) {
-            displayMainMenu();
-        }
-    }
 }
