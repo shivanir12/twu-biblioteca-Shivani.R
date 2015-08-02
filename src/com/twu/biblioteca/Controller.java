@@ -38,6 +38,16 @@ public class Controller {
                     else
                         view.show("Book is not available");
                     break;
+                case "3":
+                    LibraryOperation libraryOperation = parser.parse(choice);
+                    view.show("Enter the name of the book to checkout");
+                    String bookName = view.getStringInput();
+                    boolean isAvailable = libraryOperation.execute(library,bookName);
+                    if(isAvailable)
+                        view.show("Thank you!! Enjoy the book");
+                    else
+                        view.show("Book is not available");
+                    break;
                 case "4":
                     System.exit(0);
                     break;

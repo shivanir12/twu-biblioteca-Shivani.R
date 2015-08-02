@@ -30,7 +30,7 @@ public class LibraryTest {
     }
 
     @Test
-    public void returnsFalseIfTheBookIsAvailableInTheBookList() {
+    public void returnsFalseIfTheBookIsNotAvailableInTheBookList() {
         Book book1 = new Book("WWW", "robert", "1950");
         ArrayList<Book> availableBookList = new ArrayList<>();
         availableBookList.add(book1);
@@ -47,5 +47,15 @@ public class LibraryTest {
         checkOutBookList.add(book1);
         Library library = new Library(availableBookList, checkOutBookList);
         assertEquals(true,library.checkInBook("WWW"));
+    }
+
+    @Test
+    public void returnsFalseIfTheBookIsNotAvailableInTheCheckOutBookList() {
+        Book book1 = new Book("WWW", "robert", "1950");
+        ArrayList<Book> checkOutBookList = new ArrayList<>();
+        ArrayList<Book> availableBookList = new ArrayList<>();
+        checkOutBookList.add(book1);
+        Library library = new Library(availableBookList, checkOutBookList);
+        assertEquals(false,library.checkInBook("java"));
     }
 }
