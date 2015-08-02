@@ -36,4 +36,14 @@ public class ParserTest {
         CheckIn checkIn = new CheckIn();
         assertEquals(checkIn.getClass(), parser.parse("3").getClass());
     }
+
+    @Test
+    public void createsQuitObjectIfTheInputIsFour(){
+        ArrayList<Book> bookList = new ArrayList<>();
+        ArrayList<Book> checkoutBookList = new ArrayList<>();
+        Library library = new Library(bookList, checkoutBookList);
+        Parser parser = new Parser(bookList, library);
+        Quit quit = new Quit();
+        assertEquals(quit.getClass(), parser.parse("4").getClass());
+    }
 }

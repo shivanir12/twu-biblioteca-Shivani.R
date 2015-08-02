@@ -20,6 +20,8 @@ public class Parser {
             return new CheckOut();
         else if(input.equals("3"))
             return new CheckIn();
+        else if(input.equals("4"))
+            return new Quit();
         return null;
     }
 }

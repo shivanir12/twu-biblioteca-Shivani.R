@@ -20,7 +20,7 @@ public class Controller {
     public void dispatch() {
         while (true) {
             LibraryOperation libraryOperation;
-            String bookName;
+            String bookName = "";
             application.displayMainMenu();
             String choice = view.getStringInput();
             switch (choice) {
@@ -48,8 +48,8 @@ public class Controller {
                         view.show("This is not a valid book to return");
                     break;
                 case "4":
-                    System.exit(0);
-                    break;
+                    libraryOperation = parser.parse(choice);
+                    libraryOperation.execute(library,bookName);
                 default:
                     view.show("Enter a valid option");
             }
