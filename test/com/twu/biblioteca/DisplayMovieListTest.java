@@ -19,6 +19,6 @@ public class DisplayMovieListTest {
         movieList.add(movie1);
         DisplayMovieList displayMovieList = new DisplayMovieList();
         String list =displayMovieList.display(library);
-        assertEquals(list,"manam     1960      anup        9\n");
+        assertEquals(list,"manam               1960                anup                9\n");
     }
 }
