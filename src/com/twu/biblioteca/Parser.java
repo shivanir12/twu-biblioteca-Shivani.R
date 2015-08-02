@@ -24,6 +24,8 @@ public class Parser {
             return new Quit();
         else if(input.equals("5"))
             return new DisplayMovieList();
+        else if(input.equals("6"))
+            return new CheckOutMovie();
         return null;
     }
 }
