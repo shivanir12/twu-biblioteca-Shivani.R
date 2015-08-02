@@ -1,8 +1,6 @@
 package com.twu.biblioteca;
 
 
-import java.util.Scanner;
-
 //Accepts the choice and calls the associated methods
 public class Controller {
 
@@ -27,7 +25,8 @@ public class Controller {
             String choice = view.getStringInput();
             switch (choice) {
                 case "1":
-                    String list = library.getListFromLibrary();
+                    libraryOperation = parser.parse(choice);
+                    String list = libraryOperation.display(library);
                     view.displayBookList(list);
                     break;
                 case "2":

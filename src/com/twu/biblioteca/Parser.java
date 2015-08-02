@@ -14,7 +14,9 @@ public class Parser {
     }
 
     public LibraryOperation parse(String input) {
-        if(input.equals("2"))
+        if(input.equals("1"))
+            return new DisplayList();
+        else if(input.equals("2"))
             return new CheckOut();
         else if(input.equals("3"))
             return new CheckIn();

@@ -7,4 +7,9 @@ public class CheckOut implements LibraryOperation {
     public boolean execute(Library library, String bookName){
         return library.checkoutBook(bookName);
     }
+
+    @Override
+    public String display(Library library){
+        return "";
+    }
 }

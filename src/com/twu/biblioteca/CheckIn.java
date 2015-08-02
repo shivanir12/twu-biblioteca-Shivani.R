@@ -6,4 +6,9 @@ public class CheckIn implements LibraryOperation {
     public boolean execute(Library library, String bookName) {
         return library.checkInBook(bookName);
     }
+
+    @Override
+    public String display(Library library){
+        return "";
+    }
 }
