@@ -11,8 +11,8 @@ public class CheckOut implements LibraryOperation {
 
     @Override
     public boolean execute(Library library, String bookName){
-        boolean isAvailable = library.checkoutBook(bookName);
-        return isAvailable;
+        boolean isBookAvailable = library.checkoutBook(bookName);
+        return isBookAvailable;
     }
 
 }
