@@ -15,11 +15,12 @@ public class Main {
         availableBookList.add(book2);
         availableBookList.add(book3);
         InputOutput view = new InputOutput();
-        Library library = new Library(view, availableBookList);
+        ArrayList<Book> checkoutBookList = new ArrayList<Book>();
+        Library library = new Library(availableBookList, checkoutBookList);
         Application application = new Application(view);
         application.showWelcomeMessage();
-        Dispatcher dispatcher = new Dispatcher(view, library, application);
-        dispatcher.dispatch();
-        Parser paresr = new Parser(view, availableBookList);
+        Parser parser = new Parser(availableBookList,library);
+        Controller controller = new Controller(view, library, application, parser);
+        controller.dispatch();
     }
 }

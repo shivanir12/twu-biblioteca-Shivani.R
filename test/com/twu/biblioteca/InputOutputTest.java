@@ -43,6 +43,20 @@ public class InputOutputTest {
         System.setIn(System.in);
     }
 
+    @Test
+    public void toDisplayListOfBooks() {
+        original = System.out;
+        System.setOut(new PrintStream(outputContent));
+        InputOutput view = new InputOutput();
+        String list = "Head First Java     sierra              1950\n" +
+                "WWW                 robert              1950\n" +
+                "DS                  sahani              1956\n";
+        view.displayBookList(list);
+        assertEquals("\n\nName Of Book        Author              Year Published      \n" +
+                        "=========================================================================================\n"+list+"\n", outputContent.toString());
+        System.setOut(original);
+
+    }
 }
 
 

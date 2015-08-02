@@ -21,4 +21,13 @@ public class InputOutput {
         String stringInput = input.next();
         return stringInput;
     }
+
+    public void displayBookList(String list){
+        System.out.println();
+        System.out.println();
+        System.out.format("%-20s%-20s%-20s", "Name Of Book", "Author", "Year Published");
+        System.out.println();
+        System.out.println("=========================================================================================");
+        System.out.println(list);
+    }
 }

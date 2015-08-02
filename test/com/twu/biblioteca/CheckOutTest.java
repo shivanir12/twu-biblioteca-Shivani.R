@@ -6,15 +6,15 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
-public class ParserTest {
+public class CheckOutTest {
     @Test
-    public void createsCheckOutObjectIfTheInputIsTwo(){
-        ArrayList<Book> bookList = new ArrayList<>();
+    public void returnsTrueIfTheBookIsAvailable() {
+        Book book = new Book("Head First Java", "sierra", "1950");
+        ArrayList<Book> bookList = new ArrayList<Book>();
         ArrayList<Book> checkoutBookList = new ArrayList<>();
         Library library = new Library(bookList, checkoutBookList);
-        Parser parser = new Parser(bookList, library);
         CheckOut checkOut = new CheckOut(library);
-        assertEquals(checkOut.getClass(), parser.parse(2).getClass());
+        boolean isAvailable = checkOut.execute(library, "Head First Java");
+        assertEquals(true, isAvailable);
     }
-
 }

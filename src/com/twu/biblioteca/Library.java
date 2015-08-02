@@ -4,34 +4,46 @@ import java.util.ArrayList;
 
 
 //Library class can display list of books, checkin and checkout books
-public class Library implements LibraryOperation {
-    private final InputOutput view;
+public class Library {
     ArrayList<Book> availableBookList;
+    private ArrayList<Book> checkoutBookList;
 
-    public Library(InputOutput view, ArrayList<Book> bookList) {
-        this.view = view;
+    public Library(ArrayList<Book> bookList, ArrayList<Book> checkoutBookList) {
         this.availableBookList = bookList;
-    }
-    public void execute(){
-        displayHeader();
-        displayListOf();
+        this.checkoutBookList = checkoutBookList;
     }
 
-    public void displayHeader() {
-        String headerOfBookList = String.format("%-20s%-20s%-20s", "Name Of Book", "Author", "Year Published");
-        view.show(headerOfBookList);
-        view.show("=========================================================================================");
 
-    }
-
-    public void displayListOf() {
+    public String getListFromLibrary() {
+        String bookDetails = "";
         for (Book book : availableBookList) {
-            String bookDetails = String.format("%-20s%-20s%s", book.getBookName(),
+             bookDetails += String.format("%-20s%-20s%s\n", book.getBookName(),
                     book.getAuthor(), book.getYearOfPublication());
-            view.show(bookDetails);
         }
+        return bookDetails;
     }
 
+    private Book searchForBookInTheList(String name,ArrayList<Book> bookList){
+        for(Book book : bookList){
+            if(book.hasTitle(name))
+                return book;
+        }
+        return null;
+    }
+
+    public boolean checkoutBook(String name) {
+        Book book = searchForBookInTheList(name, availableBookList);
+        if(!(book == null)){
+            updateBookListAfterCheckOut(book);
+            return true;
+        }
+        return false;
+    }
+
+    private void updateBookListAfterCheckOut(Book book) {
+        checkoutBookList.add(book);
+        availableBookList.remove(book);
+    }
 }
 
 
