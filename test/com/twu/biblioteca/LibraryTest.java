@@ -38,4 +38,14 @@ public class LibraryTest {
         Library library = new Library(availableBookList, checkoutBookList);
         assertEquals(false,library.checkoutBook("Head First Java"));
     }
+
+    @Test
+    public void returnsTrueIfTheBookIsAvailableInTheCheckOutBookList() {
+        Book book1 = new Book("WWW", "robert", "1950");
+        ArrayList<Book> checkOutBookList = new ArrayList<>();
+        ArrayList<Book> availableBookList = new ArrayList<>();
+        checkOutBookList.add(book1);
+        Library library = new Library(availableBookList, checkOutBookList);
+        assertEquals(true,library.checkInBook("WWW"));
+    }
 }

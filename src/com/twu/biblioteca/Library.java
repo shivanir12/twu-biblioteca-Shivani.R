@@ -6,11 +6,11 @@ import java.util.ArrayList;
 //Library class can display list of books, checkin and checkout books
 public class Library {
     ArrayList<Book> availableBookList;
-    private ArrayList<Book> checkoutBookList;
+    private ArrayList<Book> checkOutBookList;
 
-    public Library(ArrayList<Book> bookList, ArrayList<Book> checkoutBookList) {
+    public Library(ArrayList<Book> bookList, ArrayList<Book> checkOutBookList) {
         this.availableBookList = bookList;
-        this.checkoutBookList = checkoutBookList;
+        this.checkOutBookList = checkOutBookList;
     }
 
 
@@ -31,8 +31,8 @@ public class Library {
         return null;
     }
 
-    public boolean checkoutBook(String name) {
-        Book book = searchForBookInTheList(name, availableBookList);
+    public boolean checkoutBook(String bookName) {
+        Book book = searchForBookInTheList(bookName, availableBookList);
         if ((book == null)) {
             return false;
         } else {
@@ -42,8 +42,22 @@ public class Library {
     }
 
     private void updateBookListAfterCheckOut(Book book) {
-        checkoutBookList.add(book);
+        checkOutBookList.add(book);
         availableBookList.remove(book);
+    }
+
+    public boolean checkInBook(String bookName) {
+        Book book = searchForBookInTheList(bookName, checkOutBookList);
+        if(!(book == null)){
+            updateBookListAfterCheckIn(book);
+            return true;
+        }
+        return false;
+    }
+
+    private void updateBookListAfterCheckIn(Book book) {
+        availableBookList.add(book);
+        checkOutBookList.remove(book);
     }
 }
 
