@@ -36,7 +36,7 @@ public class Controller {
                     if(libraryOperation.execute(library,bookName))
                         view.show("Thank you!! Enjoy the book");
                     else
-                        view.show("Book is not available");
+                        view.show("That Book is not available");
                     break;
                 case "3":
                     libraryOperation = parser.parse(choice);
@@ -50,6 +50,21 @@ public class Controller {
                 case "4":
                     libraryOperation = parser.parse(choice);
                     libraryOperation.execute(library,bookName);
+                    break;
+                case "5":
+                    libraryOperation = parser.parse(choice);
+                    String movieList = libraryOperation.display(library);
+                    view.displayMovieList(movieList);
+                    break;
+                case "6":
+                    libraryOperation = parser.parse(choice);
+                    view.show("Enter the name of the Movie to checkout");
+                    bookName = view.getStringInput();
+                    if(libraryOperation.execute(library,bookName))
+                        view.show("Thank you!! Enjoy the Movie");
+                    else
+                        view.show("That Movie is not available");
+                    break;
                 default:
                     view.show("Enter a valid option");
             }

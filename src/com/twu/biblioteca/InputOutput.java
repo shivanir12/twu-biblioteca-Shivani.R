@@ -28,4 +28,12 @@ public class InputOutput {
         System.out.println("=========================================================================================");
         System.out.println(list);
     }
+    public void displayMovieList(String list){
+        System.out.println();
+        System.out.println();
+        System.out.format("%-20s%-20s%-20s%-20s", "Name Of Movie", "Year", "Director", "Rating");
+        System.out.println();
+        System.out.println("=========================================================================================");
+        System.out.println(list);
+    }
 }

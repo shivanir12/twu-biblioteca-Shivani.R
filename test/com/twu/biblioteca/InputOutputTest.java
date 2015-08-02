@@ -55,7 +55,19 @@ public class InputOutputTest {
         assertEquals("\n\nName Of Book        Author              Year Published      \n" +
                         "=========================================================================================\n"+list+"\n", outputContent.toString());
         System.setOut(original);
-
+    }
+    @Test
+    public void toDisplayListOfMovies() {
+        original = System.out;
+        System.setOut(new PrintStream(outputContent));
+        InputOutput view = new InputOutput();
+        String list = String.format("%-20s%-20s%-20s%-20s\n", "krish", "2014", "rakesh roshan", "7");
+        view.displayMovieList(list);
+        String expectedResult = String.format("\n\n%-20s%-20s%-20s%-20s\n",
+                "Name Of Movie","Year","Director","Rating");
+        assertEquals(expectedResult+"=========================================================================================\n"+
+                list + "\n", outputContent.toString());
+        System.setOut(original);
     }
 }
 

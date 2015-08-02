@@ -11,5 +11,4 @@ public class DisplayMovieList implements LibraryOperation {
         String list = library.getMovieListFromLibrary();
         return list;
     }
-
 }

@@ -54,4 +54,16 @@ public class ParserTest {
         Quit quit = new Quit();
         assertEquals(quit.getClass(), parser.parse("4").getClass());
     }
+
+    @Test
+    public void createsDisplayMovieListObjectIfTheInputIsFive(){
+        ArrayList<Book> bookList = new ArrayList<>();
+        ArrayList<Book> checkoutBookList = new ArrayList<>();
+        ArrayList<Movie> checkOutMovieList = new ArrayList<>();
+        ArrayList<Movie> movieList = new ArrayList<>();
+        Library library = new Library(bookList, checkoutBookList, movieList, checkOutMovieList);
+        Parser parser = new Parser(bookList, library);
+        DisplayMovieList displayMovieList = new DisplayMovieList();
+        assertEquals(displayMovieList.getClass(), parser.parse("5").getClass());
+    }
 }

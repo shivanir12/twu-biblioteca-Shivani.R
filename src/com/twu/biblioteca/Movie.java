@@ -8,7 +8,7 @@ public class Movie {
 
     @Override
     public String toString() {
-        return String.format("%-20s%-20s%-20s%s\n",name, year, director, movieRating);
+        return String.format("%-20s%-20s%-20s%-20s\n",name, year, director, movieRating);
     }
 
     public Movie(String name, String year, String director, String movieRating) {
@@ -16,6 +16,10 @@ public class Movie {
         this.year = year;
         this.director = director;
         this.movieRating = movieRating;
+    }
+
+    public boolean hasTitle(String movieName){
+        return name.equalsIgnoreCase(movieName);
     }
 
 }

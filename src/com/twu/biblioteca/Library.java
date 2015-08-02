@@ -22,7 +22,7 @@ public class Library {
         String bookDetails = "";
         for (Book book : availableBookList) {
              bookDetails += String.format("%-20s%-20s%s\n", book.getBookName(),
-                    book.getAuthor(), book.getYearOfPublication());
+                     book.getAuthor(), book.getYearOfPublication());
         }
         return bookDetails;
     }
@@ -70,4 +70,28 @@ public class Library {
         availableBookList.add(book);
         checkOutBookList.remove(book);
     }
+
+    private Movie searchForMovieInTheList(String name,ArrayList<Movie> movieList){
+        for(Movie movie : movieList){
+            if(movie.hasTitle(name))
+                return movie;
+        }
+        return null;
+    }
+
+    public boolean checkoutMovie(String movieName) {
+        Movie movie = searchForMovieInTheList(movieName, movieList);
+        if ((movie == null)) {
+            return false;
+        } else {
+            updateMovieListAfterCheckOut(movie);
+            return true;
+        }
+    }
+
+    private void updateMovieListAfterCheckOut(Movie movie) {
+        checkOutMovieList.add(movie);
+        movieList.remove(movie);
+    }
+
 }
