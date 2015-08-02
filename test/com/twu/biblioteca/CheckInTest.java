@@ -15,7 +15,17 @@ public class CheckInTest {
         checkoutBookList.add(book1);
         Library library = new Library(bookList, checkoutBookList);
         CheckIn checkIn = new CheckIn();
-        boolean isAvailable = checkIn.execute(library, "Head First Java");
-        assertEquals(true, isAvailable);
+        assertEquals(true, checkIn.execute(library, "Head First Java"));
+    }
+
+    @Test
+    public void returnsFalseIfTheBookIsAvailableInTheCheckOutList() {
+        Book book1 = new Book("Head First Java", "sierra", "1950");
+        ArrayList<Book> bookList = new ArrayList<>();
+        ArrayList<Book> checkoutBookList = new ArrayList<>();
+        checkoutBookList.add(book1);
+        Library library = new Library(bookList, checkoutBookList);
+        CheckIn checkIn = new CheckIn();
+        assertEquals(false, checkIn.execute(library, "www"));
     }
 }
