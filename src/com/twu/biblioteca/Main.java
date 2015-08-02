@@ -15,14 +15,23 @@ public class Main {
         availableBookList.add(book2);
         availableBookList.add(book3);
 
+        Movie movie1 = new Movie("manam","1960","anup","9");
+        Movie movie2 = new Movie("akash","2000","puneeth","8");
+        Movie movie3 = new Movie("appu","1960","srk","9");
+        ArrayList<Movie> movieList = new ArrayList<>();
+        movieList.add(movie1);
+        movieList.add(movie2);
+        movieList.add(movie3);
+
         InputOutput view = new InputOutput();
         ArrayList<Book> checkoutBookList = new ArrayList<>();
-        Library library = new Library(availableBookList, checkoutBookList);
+        ArrayList<Movie> checkOutMovieList = new ArrayList<>();
+        Library library = new Library(availableBookList, checkoutBookList, movieList, checkOutMovieList);
 
         Application application = new Application(view);
         application.showWelcomeMessage();
 
-        Parser parser = new Parser(availableBookList,library);
+        Parser parser = new Parser(availableBookList, library);
         Controller controller = new Controller(view, library, application, parser);
         controller.dispatch();
     }

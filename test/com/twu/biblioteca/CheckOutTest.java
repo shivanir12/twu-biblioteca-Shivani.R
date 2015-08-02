@@ -13,7 +13,9 @@ public class CheckOutTest {
         ArrayList<Book> bookList = new ArrayList<>();
         bookList.add(book1);
         ArrayList<Book> checkoutBookList = new ArrayList<>();
-        Library library = new Library(bookList, checkoutBookList);
+        ArrayList<Movie> checkOutMovieList = new ArrayList<>();
+        ArrayList<Movie> movieList = new ArrayList<>();
+        Library library = new Library(bookList, checkoutBookList, movieList, checkOutMovieList);
         CheckOut checkOut = new CheckOut();
         boolean isAvailable = checkOut.execute(library, "Head First Java");
         assertEquals(true, isAvailable);
@@ -25,7 +27,9 @@ public class CheckOutTest {
         ArrayList<Book> bookList = new ArrayList<>();
         bookList.add(book1);
         ArrayList<Book> checkoutBookList = new ArrayList<>();
-        Library library = new Library(bookList, checkoutBookList);
+        ArrayList<Movie> checkOutMovieList = new ArrayList<>();
+        ArrayList<Movie> movieList = new ArrayList<>();
+        Library library = new Library(bookList, checkoutBookList, movieList, checkOutMovieList);
         CheckOut checkOut = new CheckOut();
         boolean isAvailable = checkOut.execute(library, "WWW");
         assertEquals(false, isAvailable);

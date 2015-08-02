@@ -6,18 +6,19 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
-public class DisplayListTest {
+public class DisplayMovieListTest {
+
     @Test
-    public void returnsTheListOfBooks() {
-        Book book1 = new Book("Head First Java", "sierra", "1950");
+    public void returnsTheListOfMovies(){
         ArrayList<Book> bookList = new ArrayList<>();
-        bookList.add(book1);
         ArrayList<Book> checkoutBookList = new ArrayList<>();
         ArrayList<Movie> movieList = new ArrayList<>();
         ArrayList<Movie> checkOutMovieList = new ArrayList<>();
         Library library = new Library(bookList, checkoutBookList, movieList, checkOutMovieList);
-        DisplayList displayList = new DisplayList();
-        String list =displayList.display(library);
-        assertEquals(list,"Head First Java     sierra              1950\n");
+        Movie movie1 = new Movie("manam","1960","anup","9");
+        movieList.add(movie1);
+        DisplayMovieList displayMovieList = new DisplayMovieList();
+        String list =displayMovieList.display(library);
+        assertEquals(list,"manam     1960      anup        9\n");
     }
 }

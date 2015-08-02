@@ -7,20 +7,31 @@ import java.util.ArrayList;
 public class Library {
     ArrayList<Book> availableBookList;
     private ArrayList<Book> checkOutBookList;
+    private final ArrayList<Movie> movieList;
+    private final ArrayList<Movie> checkOutMovieList;
 
-    public Library(ArrayList<Book> bookList, ArrayList<Book> checkOutBookList) {
+    public Library(ArrayList<Book> bookList, ArrayList<Book> checkOutBookList, ArrayList<Movie> movieList, ArrayList<Movie> checkOutMovieList) {
         this.availableBookList = bookList;
         this.checkOutBookList = checkOutBookList;
+        this.movieList = movieList;
+        this.checkOutMovieList = checkOutMovieList;
     }
 
 
-    public String getListFromLibrary() {
+    public String getBookListFromLibrary() {
         String bookDetails = "";
         for (Book book : availableBookList) {
              bookDetails += String.format("%-20s%-20s%s\n", book.getBookName(),
                     book.getAuthor(), book.getYearOfPublication());
         }
         return bookDetails;
+    }
+    public String getMovieListFromLibrary() {
+        String movieDetails = "";
+        for (Movie movie: movieList) {
+            movieDetails += movie.toString();
+        }
+        return movieDetails;
     }
 
     private Book searchForBookInTheList(String name,ArrayList<Book> bookList){
@@ -60,5 +71,3 @@ public class Library {
         checkOutBookList.remove(book);
     }
 }
-
-
