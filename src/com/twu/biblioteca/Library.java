@@ -33,6 +33,13 @@ public class Library {
         }
         return movieDetails;
     }
+    public String getCheckOutMovieListFromLibrary() {
+        String movieDetails = "";
+        for (Movie movie: checkOutMovieList) {
+            movieDetails += movie.toString();
+        }
+        return movieDetails;
+    }
 
     private Book searchForBookInTheList(String name,ArrayList<Book> bookList){
         for(Book book : bookList){
