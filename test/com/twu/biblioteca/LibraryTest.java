@@ -103,4 +103,27 @@ public class LibraryTest {
         Library library = new Library(availableBookList, checkoutBookList, movieList, checkOutMovieList);
         assertEquals(false,library.checkoutMovie("neninte"));
     }
+    @Test
+    public void returnsTrueIfMovieIsAvailableInCheckOutMovieList() {
+        ArrayList<Book> availableBookList = new ArrayList<>();
+        ArrayList<Book> checkoutBookList = new ArrayList<>();
+        ArrayList<Movie> movieList = new ArrayList<>();
+        ArrayList<Movie> checkOutMovieList = new ArrayList<>();
+        Movie movie1 = new Movie("manam","1960","anup","9");
+        checkOutMovieList.add(movie1);
+        Library library = new Library(availableBookList, checkoutBookList, movieList, checkOutMovieList);
+        assertEquals(true,library.checkInMovie("manam"));
+    }
+
+    @Test
+    public void returnsFalseIfMovieIsAvailableInCheckOutMovieList() {
+        ArrayList<Book> availableBookList = new ArrayList<>();
+        ArrayList<Book> checkoutBookList = new ArrayList<>();
+        ArrayList<Movie> movieList = new ArrayList<>();
+        ArrayList<Movie> checkOutMovieList = new ArrayList<>();
+        Movie movie1 = new Movie("manam","1960","anup","9");
+        checkOutMovieList.add(movie1);
+        Library library = new Library(availableBookList, checkoutBookList, movieList, checkOutMovieList);
+        assertEquals(false,library.checkInMovie("neninte"));
+    }
 }

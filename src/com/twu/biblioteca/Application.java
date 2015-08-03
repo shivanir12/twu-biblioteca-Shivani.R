@@ -22,5 +22,7 @@ public class Application {
         view.show("Enter 3 to return book");
         view.show("Enter 4 to quit");
         view.show("Enter 5 to display list of movies");
+        view.show("Enter 6 to to checkout movies");
+        view.show("Enter 7 to to return movies");
     }
 }

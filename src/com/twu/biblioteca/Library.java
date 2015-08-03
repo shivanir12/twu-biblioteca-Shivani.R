@@ -94,4 +94,18 @@ public class Library {
         movieList.remove(movie);
     }
 
+    public boolean checkInMovie(String movieName) {
+        Movie movie = searchForMovieInTheList(movieName, checkOutMovieList);
+        if ((movie == null)) {
+            return false;
+        } else {
+            updateMovieListAfterCheckIn(movie);
+            return true;
+        }
+    }
+
+    private void updateMovieListAfterCheckIn(Movie movie) {
+        movieList.add(movie);
+        checkOutMovieList.remove(movie);
+    }
 }

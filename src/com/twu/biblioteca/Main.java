@@ -31,8 +31,7 @@ public class Main {
         Application application = new Application(view);
         application.showWelcomeMessage();
 
-        Parser parser = new Parser(availableBookList, library);
-        Controller controller = new Controller(view, library, application, parser);
+        Controller controller = new Controller(view, library, application);
         controller.dispatch();
     }
 }
