@@ -28,7 +28,7 @@ public class Main {
         movieList.add(movie2);
         movieList.add(movie3);
 
-        InputOutput view = new InputOutput();
+        InputOutput inputOutput = new InputOutput();
         ArrayList<Book> checkoutBookList = new ArrayList<>();
         ArrayList<Movie> checkOutMovieList = new ArrayList<>();
         Library library = new Library(availableBookList, checkoutBookList, movieList, checkOutMovieList);
@@ -38,13 +38,15 @@ public class Main {
         UserMenuView userMenuView = new UserMenuView();
         LibrarianMenuView librarianMenuView = new LibrarianMenuView();
 
-        LoginView loginView = new LoginView();
-        loginView.validateUserLoginDetails(view, user1, userMenuView, librarianMenuView);
-
-        Application application = new Application(view);
+        Application application = new Application(inputOutput);
         application.showWelcomeMessage();
+        Controller controller = new Controller(inputOutput, library, userMenuView);
 
-        Controller controller = new Controller(view, library, application);
-        controller.dispatch();
+
+        LoginView loginView = new LoginView();
+        loginView.validateUserLoginDetails(inputOutput, user1, userMenuView, librarianMenuView, controller);
+
+
+        controller.dispatch("1");
     }
 }

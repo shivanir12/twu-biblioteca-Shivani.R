@@ -1,23 +1,25 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.View.InputOutput;
+import com.twu.biblioteca.View.UserMenuView;
 import org.junit.Test;
 
-import java.util.ArrayList;
-
-import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public class DisplayListTest {
     @Test
     public void returnsTheListOfBooks() {
-        Book book1 = new Book("Head First Java", "sierra", "1950");
-        ArrayList<Book> bookList = new ArrayList<>();
-        bookList.add(book1);
-        ArrayList<Book> checkoutBookList = new ArrayList<>();
-        ArrayList<Movie> movieList = new ArrayList<>();
-        ArrayList<Movie> checkOutMovieList = new ArrayList<>();
-        Library library = new Library(bookList, checkoutBookList, movieList, checkOutMovieList);
         DisplayList displayList = new DisplayList();
-        String list =displayList.display(library);
-        assertEquals(list,"Head First Java     sierra              1950\n");
+        Library library = mock(Library.class);
+        InputOutput inputOutput = mock(InputOutput.class);
+        UserMenuView userMenuView = mock(UserMenuView.class);
+
+        when(library.getBookListFromLibrary()).thenReturn("Head First Java     sierra              1950\n");
+
+        displayList.show(library, inputOutput, userMenuView);
+        verify(inputOutput).show("Head First Java     sierra              1950\n");
+        verify(userMenuView).showUserMenu(inputOutput);
     }
 }

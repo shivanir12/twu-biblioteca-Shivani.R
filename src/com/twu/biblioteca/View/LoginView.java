@@ -1,5 +1,6 @@
 package com.twu.biblioteca.View;
 
+import com.twu.biblioteca.Controller;
 import com.twu.biblioteca.User;
 
 public class LoginView {
@@ -13,10 +14,10 @@ public class LoginView {
         password = inputOutput.getStringInput();
 
     }
-    public void validateUserLoginDetails(InputOutput inputOutput, User user, UserMenuView userMenuView, LibrarianMenuView librarianMenuView) {
+    public void validateUserLoginDetails(InputOutput inputOutput, User user, UserMenuView userMenuView, LibrarianMenuView librarianMenuView, Controller controller) {
         getLoginDetail(inputOutput);
         if(user.checkValidity(userName+" "+password))
-            userMenuView.showUserMenu();
+            userMenuView.showUserMenu(inputOutput);
         else
             inputOutput.show("Enter valid userName/password");
     }

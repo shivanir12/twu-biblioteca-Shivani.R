@@ -1,15 +1,15 @@
 package com.twu.biblioteca;
 
-public class DisplayList implements LibraryOperation {
+import com.twu.biblioteca.View.InputOutput;
+import com.twu.biblioteca.View.Iview;
+import com.twu.biblioteca.View.UserMenuView;
+
+public class DisplayList implements Iview {
 
     @Override
-    public boolean execute(Library library, String bookName) {
-        return false;
-    }
-
-    @Override
-    public String display(Library library) {
+    public void show(Library library, InputOutput inputOutput, UserMenuView userMenuView) {
         String list = library.getBookListFromLibrary();
-        return list;
+        inputOutput.show(list);
+        userMenuView.showUserMenu(inputOutput);
     }
 }
