@@ -1,7 +1,9 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.View.InputOutput;
+import com.twu.biblioteca.View.LibrarianMenuView;
 import com.twu.biblioteca.View.LoginView;
+import com.twu.biblioteca.View.UserMenuView;
 
 import java.util.ArrayList;
 
@@ -33,8 +35,11 @@ public class Main {
 
         User user1 = new User("#11-1000", "shivani");
 
+        UserMenuView userMenuView = new UserMenuView();
+        LibrarianMenuView librarianMenuView = new LibrarianMenuView();
+
         LoginView loginView = new LoginView();
-        loginView.getLoginDetails(view);
+        loginView.validateUserLoginDetails(view, user1, userMenuView, librarianMenuView);
 
         Application application = new Application(view);
         application.showWelcomeMessage();

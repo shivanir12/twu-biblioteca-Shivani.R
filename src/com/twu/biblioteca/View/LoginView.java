@@ -1,15 +1,23 @@
 package com.twu.biblioteca.View;
 
+import com.twu.biblioteca.User;
+
 public class LoginView {
     public String userName;
     public String password;
-    public void getLoginDetails(InputOutput inputOutput){  //user, UserMenuView userMenuView, LibrarianMenuView librarianMenuView) {
+
+    private void getLoginDetail(InputOutput inputOutput){
         inputOutput.show("Enter the User Name");
-        String userName =  inputOutput.getStringInput();
+        userName =  inputOutput.getStringInput();
         inputOutput.show("Enter the Password");
-        String password = inputOutput.getStringInput();
+        password = inputOutput.getStringInput();
 
-        //if(user.checkUserValidity(userName+" "+password))
-
+    }
+    public void validateUserLoginDetails(InputOutput inputOutput, User user, UserMenuView userMenuView, LibrarianMenuView librarianMenuView) {
+        getLoginDetail(inputOutput);
+        if(user.checkValidity(userName+" "+password))
+            userMenuView.showUserMenu();
+        else
+            inputOutput.show("Enter valid userName/password");
     }
 }

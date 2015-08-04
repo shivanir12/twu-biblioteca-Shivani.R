@@ -18,6 +18,4 @@ public class UserTest {
         boolean validUser = user1.checkValidity("#12-2000 shivani");
         assertEquals(false, validUser);
     }
-
-
 }
