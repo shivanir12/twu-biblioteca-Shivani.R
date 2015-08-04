@@ -13,9 +13,13 @@ public class User {
 
 
     public boolean checkValidity(String userCredentials) {
-        if (this.userName == userName && this.password == password) {
+        String thatUserName = userCredentials.split(" ")[0];
+        String thatPassword = userCredentials.split(" ")[1];
+
+        if (this.userName.equals(thatUserName) && this.password.equals(thatPassword)) {
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
 }
