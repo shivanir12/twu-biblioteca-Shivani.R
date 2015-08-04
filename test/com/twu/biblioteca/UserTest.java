@@ -1,7 +1,15 @@
 package com.twu.biblioteca;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class UserTest {
-    User user1 = new User("#12-1000", "shivani");
-    user1.checkValidity(String );
+    @Test
+    public void returnsTrueForValidUser() {
+        User user1 = new User("#12-1000", "shivani");
+        boolean validUser = user1.checkValidity("#12-1000 shivani");
+        assertEquals(true, validUser);
+    }
 
 }

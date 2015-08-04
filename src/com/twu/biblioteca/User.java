@@ -12,4 +12,10 @@ public class User {
     }
 
 
+    public boolean checkValidity(String userCredentials) {
+        if (this.userName == userName && this.password == password) {
+            return true;
+        }
+        return false;
+    }
 }
