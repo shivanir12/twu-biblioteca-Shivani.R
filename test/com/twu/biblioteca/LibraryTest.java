@@ -81,7 +81,7 @@ public class LibraryTest {
         assertEquals(expectedResult,library.getMovieListFromLibrary());
     }
     @Test
-    public void toGetTheCheckOutMovieListFromLibrary() {
+    public void toGetTheCheckedOutMovieListFromLibrary() {
         ArrayList<Book> availableBookList = new ArrayList<>();
         ArrayList<Book> checkoutBookList = new ArrayList<>();
         ArrayList<Movie> movieList = new ArrayList<>();
@@ -91,6 +91,18 @@ public class LibraryTest {
         Library library = new Library(availableBookList, checkoutBookList, movieList, checkOutMovieList);
         String expectedResult = ""+String.format("%-20s%-20s%-20s%-20s\n","manam","1960","anup", "9");
         assertEquals(expectedResult,library.getCheckOutMovieListFromLibrary());
+    }
+    @Test
+    public void toGetTheCheckedOutBookListFromLibrary() {
+        ArrayList<Book> availableBookList = new ArrayList<>();
+        ArrayList<Book> checkoutBookList = new ArrayList<>();
+        ArrayList<Movie> movieList = new ArrayList<>();
+        ArrayList<Movie> checkOutMovieList = new ArrayList<>();
+        Book book1 = new Book("WWW", "robert", "1950");
+        checkoutBookList.add(book1);
+        Library library = new Library(availableBookList, checkoutBookList, movieList, checkOutMovieList);
+        String expectedResult = ""+String.format("%-20s%-20s%s\n","WWW","robert","1950");
+        assertEquals(expectedResult,library.getCheckOutBookListFromLibrary());
     }
     @Test
     public void returnsTrueIfMovieIsAvailableInMovieList() {

@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.View.InputOutput;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
@@ -10,7 +11,6 @@ import static org.junit.Assert.assertEquals;
 
 
 public class InputOutputTest {
-
     private final ByteArrayOutputStream outputContent = new ByteArrayOutputStream();
     private PrintStream original;
 
@@ -23,7 +23,6 @@ public class InputOutputTest {
         String message = "Welcome";
         view.show(message);
         assertEquals("Welcome\n", outputContent.toString());
-
         System.setOut(original);
     }
 

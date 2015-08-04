@@ -1,6 +1,8 @@
 package com.twu.biblioteca;
 
 
+import com.twu.biblioteca.View.InputOutput;
+
 //Accepts the choice and calls the associated methods
 public class Controller {
 
@@ -34,7 +36,6 @@ public class Controller {
                 else
                     view.show("That Book is not available");
             } else if (choice.equals("3")) {
-
                 libraryOperation = new CheckIn();
                 view.show("Enter the name of the book to return");
                 bookName = view.getStringInput();
@@ -69,7 +70,11 @@ public class Controller {
                 libraryOperation = new DisplayCheckedOutMovieList();
                 String list = libraryOperation.display(library);
                 view.displayMovieList(list);
-            } else {
+            } else if (choice.equals("9")) {
+                libraryOperation = new DisplayCheckedOutBookList();
+                String list = libraryOperation.display(library);
+                view.displayBookList(list);
+            }else {
                 view.show("Enter a valid option");
             }
         }

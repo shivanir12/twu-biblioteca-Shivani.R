@@ -1,5 +1,8 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.View.InputOutput;
+import com.twu.biblioteca.View.LoginView;
+
 import java.util.ArrayList;
 
 
@@ -27,6 +30,11 @@ public class Main {
         ArrayList<Book> checkoutBookList = new ArrayList<>();
         ArrayList<Movie> checkOutMovieList = new ArrayList<>();
         Library library = new Library(availableBookList, checkoutBookList, movieList, checkOutMovieList);
+
+        User user1 = new User("#11-1000", "shivani");
+
+        LoginView loginView = new LoginView();
+        loginView.getLoginDetails(view);
 
         Application application = new Application(view);
         application.showWelcomeMessage();

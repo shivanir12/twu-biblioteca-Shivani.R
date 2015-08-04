@@ -115,4 +115,13 @@ public class Library {
         movieList.add(movie);
         checkOutMovieList.remove(movie);
     }
+
+    public String getCheckOutBookListFromLibrary() {
+        String bookDetails = "";
+        for (Book book : checkOutBookList) {
+            bookDetails += String.format("%-20s%-20s%s\n", book.getBookName(),
+                    book.getAuthor(), book.getYearOfPublication());
+        }
+        return bookDetails;
+    }
 }
