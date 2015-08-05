@@ -23,7 +23,7 @@ public class CheckOutMovieViewTest {
 
         checkOutMovieView.show();
 
-        verify(inputOutput, atLeast(1)).show("Thank you!! Enjoy the book");
+        verify(inputOutput, atLeast(1)).show("Thank you!! Enjoy the movie");
     }
 
     @Test
