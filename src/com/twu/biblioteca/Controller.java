@@ -50,6 +50,9 @@ public class Controller {
             else if (choice.equals("7")) {
                 iview = new DisplayCheckedOutBookList(library, inputOutput);
                 iview.show();
+            } else if (choice.equals("8")) {
+                iview = new DisplayCheckedOutMovieList(library, inputOutput);
+                iview.show();
             }else
                 break;
         }

@@ -9,7 +9,7 @@ import static org.mockito.Mockito.when;
 public class DisplayMovieListTest {
 
     @Test
-    public void returnsTheListOfBooks() {
+    public void returnsTheListOfMovies() {
         Library library = mock(Library.class);
         InputOutput inputOutput = mock(InputOutput.class);
         DisplayMovieList displayMovieList = new DisplayMovieList(library,inputOutput);

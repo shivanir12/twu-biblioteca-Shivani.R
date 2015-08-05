@@ -1,10 +1,21 @@
 package com.twu.biblioteca;
 
-public class DisplayCheckedOutMovieList implements LibraryOperation {
+import com.twu.biblioteca.view.Iview;
 
-    @Override
-    public boolean execute(String bookName) {
-        return false;
+public class DisplayCheckedOutMovieList implements Iview {
+
+    private Library library;
+    private InputOutput inputOutput;
+
+    public DisplayCheckedOutMovieList(Library library, InputOutput inputOutput) {
+
+        this.library = library;
+        this.inputOutput = inputOutput;
     }
 
+    @Override
+    public void show() {
+        String list = library.getCheckOutMovieListFromLibrary();
+        inputOutput.show(list);
+    }
 }

@@ -1,7 +1,6 @@
 package com.twu.biblioteca;
 
 
-import com.twu.biblioteca.view.UserMenuView;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
@@ -10,7 +9,7 @@ import static org.mockito.Mockito.when;
 
 public class DisplayCheckedOutBookListTest {
     @Test
-    public void returnsTheListOfBooks() {
+    public void returnsTheListOfCheckedOutBooks() {
         Library library = mock(Library.class);
         InputOutput inputOutput = mock(InputOutput.class);
         DisplayCheckedOutBookList displayCheckedOutBookList = new DisplayCheckedOutBookList(library,inputOutput);
