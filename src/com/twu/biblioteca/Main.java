@@ -33,20 +33,21 @@ public class Main {
         ArrayList<Movie> checkOutMovieList = new ArrayList<>();
         Library library = new Library(availableBookList, checkoutBookList, movieList, checkOutMovieList);
 
-        User user1 = new User("#11-1000", "shivani");
+        User user1 = new User("#12-1000", "shivani","Shivani R","shivanir@gmail.com","9481816385","customer");
+        User user2 = new User("#12-1000","poorva","poorva","poorva@gmail.com","9481816386","librarian");
+        ArrayList<User> users = new ArrayList<>();
+        users.add(user1);
+        users.add(user2);
 
-        UserMenuView userMenuView = new UserMenuView();
-        LibrarianMenuView librarianMenuView = new LibrarianMenuView();
+        UserMenuView userMenuView = new UserMenuView(inputOutput);
 
         Application application = new Application(inputOutput);
         application.showWelcomeMessage();
         Controller controller = new Controller(inputOutput, library, userMenuView);
 
-
         LoginView loginView = new LoginView();
-        loginView.validateUserLoginDetails(inputOutput, user1, userMenuView, librarianMenuView, controller);
+        loginView.validateUserLoginDetails(inputOutput, user1, controller);
 
-
-        controller.dispatch("1");
+        controller.dispatch();
     }
 }

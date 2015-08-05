@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 
+import com.twu.biblioteca.View.CheckOutBookView;
 import com.twu.biblioteca.View.InputOutput;
 import com.twu.biblioteca.View.Iview;
 import com.twu.biblioteca.View.UserMenuView;
@@ -19,12 +20,24 @@ public class Controller {
         this.userMenuView = userMenuView;
     }
 
-    public void dispatch(String choice) {
-        LibraryOperation libraryOperation;
-        Iview iview;
-        if (choice.equals("1")) {
-            iview = new DisplayList();
-            iview.show(library, inputOutput, userMenuView);
+    public void dispatch() {
+        while (true) {
+            userMenuView.showUserMenu();
+            String choice = inputOutput.getStringInput();
+            LibraryOperation libraryOperation;
+            Iview iview;
+            if (choice.equals("1")) {
+                iview = new DisplayList(library, inputOutput, userMenuView);
+                iview.show();
+
+            } else if (choice.equals("2")) {
+                libraryOperation = new CheckOut(library);
+                iview = new CheckOutBookView(libraryOperation, inputOutput);
+                iview.show();
+
+            }
+            else if (choice.equals("4"))
+                break;
         }
     }
 }

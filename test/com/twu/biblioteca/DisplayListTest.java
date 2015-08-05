@@ -11,15 +11,15 @@ import static org.mockito.Mockito.when;
 public class DisplayListTest {
     @Test
     public void returnsTheListOfBooks() {
-        DisplayList displayList = new DisplayList();
         Library library = mock(Library.class);
         InputOutput inputOutput = mock(InputOutput.class);
         UserMenuView userMenuView = mock(UserMenuView.class);
+        DisplayList displayList = new DisplayList(library,inputOutput,userMenuView);
 
         when(library.getBookListFromLibrary()).thenReturn("Head First Java     sierra              1950\n");
 
-        displayList.show(library, inputOutput, userMenuView);
+        displayList.show();
         verify(inputOutput).show("Head First Java     sierra              1950\n");
-        verify(userMenuView).showUserMenu(inputOutput);
+        verify(userMenuView).showUserMenu();
     }
 }

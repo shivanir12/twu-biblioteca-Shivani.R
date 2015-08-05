@@ -22,8 +22,8 @@ public class UserMenuViewTest {
                 "Enter 7 to to return movies\n" +
                 "Enter 8 to display Checked out movie list\n" +
                 "Enter 9 to display checked out book list\n";
-        UserMenuView userMenuView = new UserMenuView();
-        userMenuView.showUserMenu(inputOutput);
+        UserMenuView userMenuView = new UserMenuView(inputOutput);
+        userMenuView.showUserMenu();
         verify(inputOutput).show(menu);
     }
 }

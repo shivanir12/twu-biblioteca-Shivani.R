@@ -1,14 +1,27 @@
 package com.twu.biblioteca;
 
-public class DisplayMovieList implements LibraryOperation {
-    @Override
-    public boolean execute(Library library, String bookName) {
-        return false;
+import com.twu.biblioteca.View.InputOutput;
+import com.twu.biblioteca.View.Iview;
+import com.twu.biblioteca.View.UserMenuView;
+
+public class DisplayMovieList implements Iview {
+
+    private Library library;
+    private InputOutput inputOutput;
+    private UserMenuView userMenuView;
+
+    public DisplayMovieList(Library library, InputOutput inputOutput, UserMenuView userMenuView) {
+
+        this.library = library;
+        this.inputOutput = inputOutput;
+        this.userMenuView = userMenuView;
     }
 
     @Override
-    public String display(Library library) {
+    public void show() {
         String list = library.getMovieListFromLibrary();
-        return list;
+        inputOutput.show(list);
+        userMenuView.showUserMenu();
     }
+
 }

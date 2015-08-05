@@ -6,10 +6,20 @@ import com.twu.biblioteca.View.UserMenuView;
 
 public class DisplayList implements Iview {
 
+    private Library library;
+    private InputOutput inputOutput;
+    private UserMenuView userMenuView;
+
+    public DisplayList(Library library, InputOutput inputOutput, UserMenuView userMenuView) {
+
+        this.library = library;
+        this.inputOutput = inputOutput;
+        this.userMenuView = userMenuView;
+    }
+
     @Override
-    public void show(Library library, InputOutput inputOutput, UserMenuView userMenuView) {
+    public void show() {
         String list = library.getBookListFromLibrary();
         inputOutput.show(list);
-        userMenuView.showUserMenu(inputOutput);
     }
 }

@@ -3,13 +3,15 @@ package com.twu.biblioteca;
 
 public class CheckOut implements LibraryOperation {
 
-    @Override
-    public boolean execute(Library library, String bookName){
-        return library.checkoutBook(bookName);
+    private Library library;
+
+    public CheckOut(Library library) {
+
+        this.library = library;
     }
 
     @Override
-    public String display(Library library){
-        return "";
+    public boolean execute(String bookName){
+        return library.checkoutBook(bookName);
     }
 }

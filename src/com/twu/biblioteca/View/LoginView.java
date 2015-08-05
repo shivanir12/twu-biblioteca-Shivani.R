@@ -14,11 +14,11 @@ public class LoginView {
         password = inputOutput.getStringInput();
 
     }
-    public void validateUserLoginDetails(InputOutput inputOutput, User user, UserMenuView userMenuView, LibrarianMenuView librarianMenuView, Controller controller) {
+    public void validateUserLoginDetails(InputOutput inputOutput, User user, Controller controller) {
         getLoginDetail(inputOutput);
-        if(user.checkValidity(userName+" "+password))
-            userMenuView.showUserMenu(inputOutput);
+        if(user.checkValidity("#12-1000","shivani"))
+            controller.dispatch();
         else
-            inputOutput.show("Enter valid userName/password");
+            inputOutput.show("invalid userName/password");
     }
 }

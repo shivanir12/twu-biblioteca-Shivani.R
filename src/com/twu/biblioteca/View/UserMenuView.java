@@ -1,7 +1,16 @@
 package com.twu.biblioteca.View;
 
+
+
 public class UserMenuView {
-    public void showUserMenu(InputOutput inputOutput) {
+    private InputOutput inputOutput;
+
+    public UserMenuView(InputOutput inputOutput) {
+
+        this.inputOutput = inputOutput;
+    }
+
+    public void showUserMenu() {
         String menu = "";
         menu += "--*Main Menu*--\n" +
                 "================================\n"+
@@ -16,7 +25,5 @@ public class UserMenuView {
                 "Enter 9 to display checked out book list\n";
         inputOutput.show(menu);
         inputOutput.show("Enter the choice");
-        String choice = inputOutput.getStringInput();
-
     }
 }

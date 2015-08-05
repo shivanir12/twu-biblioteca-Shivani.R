@@ -22,34 +22,32 @@ public class LoginViewTest {
 
         LoginView loginView = new LoginView();
         UserMenuView userMenuView = mock(UserMenuView.class);
-        LibrarianMenuView librarianMenuView = mock(LibrarianMenuView.class);
         User user = mock(User.class);
         InputOutput inputOutput = mock(InputOutput.class);
-        Library library = null;
-        Controller controller = new Controller(inputOutput,library, userMenuView);
+        Library library = mock(Library.class);
+        Controller controller = mock(Controller.class);
 
-        when(user.checkValidity(anyString())).thenReturn(true);
+        when(user.checkValidity(anyString(),anyString())).thenReturn(true);
 
-        loginView.validateUserLoginDetails(inputOutput, user, userMenuView, librarianMenuView, controller);
+        loginView.validateUserLoginDetails(inputOutput, user, controller);
 
-        verify(user).checkValidity(loginView.userName +" " +loginView.password);
-        verify(userMenuView).showUserMenu(inputOutput);
+        verify(user).checkValidity(loginView.userName, loginView.password);
+        verify(controller).dispatch();
     }
     @Test
     public void displaysAMessageIfUserCredentialsAreINValid(){
 
         LoginView loginView = new LoginView();
         UserMenuView userMenuView = mock(UserMenuView.class);
-        LibrarianMenuView librarianMenuView = mock(LibrarianMenuView.class);
         User user = mock(User.class);
         InputOutput inputOutput = mock(InputOutput.class);
-        when(user.checkValidity(anyString())).thenReturn(false);
+        when(user.checkValidity(anyString(),anyString())).thenReturn(false);
         Library library = null;
         Controller controller = new Controller(inputOutput,library, userMenuView);
 
-        loginView.validateUserLoginDetails(inputOutput, user, userMenuView, librarianMenuView, controller);
+        loginView.validateUserLoginDetails(inputOutput, user, controller);
 
-        verify(user).checkValidity(loginView.userName + " " + loginView.password);
+        verify(user).checkValidity(loginView.userName, loginView.password);
         verify(inputOutput).show("Enter valid userName/password");
     }
 }
