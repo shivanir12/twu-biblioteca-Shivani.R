@@ -26,18 +26,22 @@ public class Controller {
             if (choice.equals("1")) {
                 iview = new DisplayList(library, inputOutput);
                 iview.show();
-            }
-            else if (choice.equals("2")) {
+            } else if (choice.equals("2")) {
                 libraryOperation = new CheckOut(library);
                 iview = new CheckOutBookView(libraryOperation, inputOutput);
                 iview.show();
-            }
-            else if (choice.equals("3")) {
+            } else if (choice.equals("3")) {
                 libraryOperation = new CheckIn(library);
                 iview = new ReturnBookView(libraryOperation, inputOutput);
                 iview.show();
-            }
-            else
+            } else if (choice.equals("4")) {
+                iview = new DisplayMovieList(library, inputOutput);
+                iview.show();
+            } else if (choice.equals("5")) {
+                libraryOperation = new CheckOutMovie(library);
+                iview = new CheckOutMovieView(libraryOperation, inputOutput);
+                iview.show();
+            }else
                 break;
         }
     }
