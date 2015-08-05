@@ -41,6 +41,11 @@ public class Controller {
                 libraryOperation = new CheckOutMovie(library);
                 iview = new CheckOutMovieView(libraryOperation, inputOutput);
                 iview.show();
+            }
+            else if (choice.equals("7")) {
+                libraryOperation = new CheckIn(library);
+                iview = new ReturnMovieView(libraryOperation, inputOutput);
+                iview.show();
             }else
                 break;
         }

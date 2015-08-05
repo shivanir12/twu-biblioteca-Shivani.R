@@ -1,11 +1,9 @@
 package com.twu.biblioteca.newview;
 
 import com.twu.biblioteca.CheckOut;
-import com.twu.biblioteca.Library;
 import com.twu.biblioteca.LibraryOperation;
 import com.twu.biblioteca.InputOutput;
 import com.twu.biblioteca.view.ReturnBookView;
-import com.twu.biblioteca.view.UserMenuView;
 import org.junit.Test;
 
 import static org.mockito.Matchers.anyString;
@@ -15,9 +13,7 @@ public class ReturnBookViewTest {
     @Test
     public void callsTheCheckOutOperationAndDisplaysThankYouMessage() {
 
-        Library library = mock(Library.class);
         InputOutput inputOutput = mock(InputOutput.class);
-        UserMenuView userMenuView = mock(UserMenuView.class);
         LibraryOperation libraryOperation = mock(CheckOut.class);
 
         ReturnBookView returnBookView = new ReturnBookView(libraryOperation, inputOutput);
@@ -32,9 +28,7 @@ public class ReturnBookViewTest {
     @Test
     public void callsTheCheckOutOperationAndDisplays() {
 
-        Library library = mock(Library.class);
         InputOutput inputOutput = mock(InputOutput.class);
-        UserMenuView userMenuView = mock(UserMenuView.class);
         LibraryOperation libraryOperation = mock(CheckOut.class);
 
         ReturnBookView returnBookView = new ReturnBookView(libraryOperation, inputOutput);

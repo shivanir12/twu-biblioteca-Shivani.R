@@ -3,38 +3,41 @@ package com.twu.biblioteca.newview;
 import com.twu.biblioteca.CheckOut;
 import com.twu.biblioteca.InputOutput;
 import com.twu.biblioteca.LibraryOperation;
-import com.twu.biblioteca.view.CheckOutMovieView;
+import com.twu.biblioteca.view.ReturnBookView;
+import com.twu.biblioteca.view.ReturnMovieView;
 import org.junit.Test;
 
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.*;
 
-public class CheckOutMovieViewTest {
+public class ReturnMovieViewTest {
     @Test
     public void callsTheCheckOutOperationAndDisplaysThankYouMessage() {
 
         InputOutput inputOutput = mock(InputOutput.class);
         LibraryOperation libraryOperation = mock(CheckOut.class);
 
-        CheckOutMovieView checkOutMovieView = new CheckOutMovieView(libraryOperation, inputOutput);
+        ReturnMovieView returnMovieView = new ReturnMovieView(libraryOperation, inputOutput);
 
         when(libraryOperation.execute(anyString())).thenReturn(true);
 
-        checkOutMovieView.show();
+        returnMovieView.show();
 
-        verify(inputOutput, atLeast(1)).show("Thank you!! Enjoy the movie");
+        verify(inputOutput, atLeast(1)).show("Thank you for returning the movie");
     }
 
     @Test
-    public void callsTheCheckOutOperationAndDisplaysInvalidMessageIfBookIsNotAvailable() {
+    public void callsTheCheckOutOperationAndDisplays() {
 
         InputOutput inputOutput = mock(InputOutput.class);
         LibraryOperation libraryOperation = mock(CheckOut.class);
-        CheckOutMovieView checkOutMovieView = new CheckOutMovieView(libraryOperation, inputOutput);
 
+        ReturnBookView returnBookView = new ReturnBookView(libraryOperation, inputOutput);
         when(libraryOperation.execute(anyString())).thenReturn(false);
 
-        checkOutMovieView.show();
-        verify(inputOutput).show("That movie is not available");
+        returnBookView.show();
+        verify(inputOutput).show("That is not a valid book to return");
     }
+
+
 }
