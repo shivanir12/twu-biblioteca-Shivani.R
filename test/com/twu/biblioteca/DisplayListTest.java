@@ -1,7 +1,6 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.View.InputOutput;
-import com.twu.biblioteca.View.UserMenuView;
+import com.twu.biblioteca.view.UserMenuView;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
@@ -14,7 +13,7 @@ public class DisplayListTest {
         Library library = mock(Library.class);
         InputOutput inputOutput = mock(InputOutput.class);
         UserMenuView userMenuView = mock(UserMenuView.class);
-        DisplayList displayList = new DisplayList(library,inputOutput,userMenuView);
+        DisplayList displayList = new DisplayList(library,inputOutput);
 
         when(library.getBookListFromLibrary()).thenReturn("Head First Java     sierra              1950\n");
 

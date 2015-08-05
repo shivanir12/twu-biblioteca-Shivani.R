@@ -1,12 +1,9 @@
-package com.twu.biblioteca.ViewTest;
+package com.twu.biblioteca.newview;
 
 import com.twu.biblioteca.Controller;
-import com.twu.biblioteca.Library;
 import com.twu.biblioteca.User;
-import com.twu.biblioteca.View.InputOutput;
-import com.twu.biblioteca.View.LibrarianMenuView;
-import com.twu.biblioteca.View.LoginView;
-import com.twu.biblioteca.View.UserMenuView;
+import com.twu.biblioteca.InputOutput;
+import com.twu.biblioteca.view.LoginView;
 import org.junit.Test;
 
 import java.util.ArrayList;

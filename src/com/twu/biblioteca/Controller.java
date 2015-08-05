@@ -1,10 +1,7 @@
 package com.twu.biblioteca;
 
 
-import com.twu.biblioteca.View.CheckOutBookView;
-import com.twu.biblioteca.View.InputOutput;
-import com.twu.biblioteca.View.Iview;
-import com.twu.biblioteca.View.UserMenuView;
+import com.twu.biblioteca.view.*;
 
 //Accepts the choice and calls the associated methods
 public class Controller {
@@ -27,16 +24,20 @@ public class Controller {
             LibraryOperation libraryOperation;
             Iview iview;
             if (choice.equals("1")) {
-                iview = new DisplayList(library, inputOutput, userMenuView);
+                iview = new DisplayList(library, inputOutput);
                 iview.show();
-
-            } else if (choice.equals("2")) {
+            }
+            else if (choice.equals("2")) {
                 libraryOperation = new CheckOut(library);
                 iview = new CheckOutBookView(libraryOperation, inputOutput);
                 iview.show();
-
             }
-            else if (choice.equals("4"))
+            else if (choice.equals("3")) {
+                libraryOperation = new CheckIn(library);
+                iview = new ReturnBookView(libraryOperation, inputOutput);
+                iview.show();
+            }
+            else
                 break;
         }
     }

@@ -1,4 +1,4 @@
-package com.twu.biblioteca.View;
+package com.twu.biblioteca.view;
 
 public class LibrarianMenuView {
     public void showLibrarianMenu() {

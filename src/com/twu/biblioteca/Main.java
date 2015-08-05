@@ -1,9 +1,7 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.View.InputOutput;
-import com.twu.biblioteca.View.LibrarianMenuView;
-import com.twu.biblioteca.View.LoginView;
-import com.twu.biblioteca.View.UserMenuView;
+import com.twu.biblioteca.view.LoginView;
+import com.twu.biblioteca.view.UserMenuView;
 
 import java.util.ArrayList;
 

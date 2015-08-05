@@ -1,7 +1,9 @@
-package com.twu.biblioteca.ViewTest;
+package com.twu.biblioteca.newview;
 
 import com.twu.biblioteca.*;
-import com.twu.biblioteca.View.*;
+import com.twu.biblioteca.view.CheckOutBookView;
+import com.twu.biblioteca.InputOutput;
+import com.twu.biblioteca.view.UserMenuView;
 import org.junit.Test;
 
 import static org.mockito.Matchers.anyString;
@@ -26,7 +28,7 @@ public class CheckOutBookViewTest {
     }
 
     @Test
-    public void callsTheCheckOutOperationAndDisplays() {
+    public void callsTheCheckOutOperationAndDisplaysInvalidMessageIfBookIsNotAvailable() {
 
         Library library = mock(Library.class);
         InputOutput inputOutput = mock(InputOutput.class);

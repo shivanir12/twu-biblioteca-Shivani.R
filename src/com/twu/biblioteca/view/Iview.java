@@ -1,4 +1,4 @@
-package com.twu.biblioteca.View;
+package com.twu.biblioteca.view;
 
 
 public interface Iview {

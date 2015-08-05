@@ -1,6 +1,7 @@
-package com.twu.biblioteca.View;
+package com.twu.biblioteca.view;
 
 
+import com.twu.biblioteca.InputOutput;
 
 public class UserMenuView {
     private InputOutput inputOutput;

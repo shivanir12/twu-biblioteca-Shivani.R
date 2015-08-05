@@ -1,7 +1,7 @@
-package com.twu.biblioteca.ViewTest;
+package com.twu.biblioteca.newview;
 
-import com.twu.biblioteca.View.InputOutput;
-import com.twu.biblioteca.View.UserMenuView;
+import com.twu.biblioteca.InputOutput;
+import com.twu.biblioteca.view.UserMenuView;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
