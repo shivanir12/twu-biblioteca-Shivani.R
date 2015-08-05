@@ -33,8 +33,8 @@ public class Main {
         ArrayList<Movie> checkOutMovieList = new ArrayList<>();
         Library library = new Library(availableBookList, checkoutBookList, movieList, checkOutMovieList);
 
-        User user1 = new User("#12-1000", "shivani","Shivani R","shivanir@gmail.com","9481816385","customer");
-        User user2 = new User("#12-1000","poorva","poorva","poorva@gmail.com","9481816386","librarian");
+        User user1 = new User("123-1000", "shivani","Shivani R","shivanir@gmail.com","9481816385","customer");
+        User user2 = new User("123-1001","poorva","poorva","poorva@gmail.com","9481816386","librarian");
         ArrayList<User> users = new ArrayList<>();
         users.add(user1);
         users.add(user2);
@@ -46,8 +46,6 @@ public class Main {
         Controller controller = new Controller(inputOutput, library, userMenuView);
 
         LoginView loginView = new LoginView();
-        loginView.validateUserLoginDetails(inputOutput, user1, controller);
-
-        controller.dispatch();
+        loginView.validateUserLoginDetails(inputOutput, users, controller);
     }
 }

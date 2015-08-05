@@ -3,6 +3,8 @@ package com.twu.biblioteca.View;
 import com.twu.biblioteca.Controller;
 import com.twu.biblioteca.User;
 
+import java.util.ArrayList;
+
 public class LoginView {
     public String userName;
     public String password;
@@ -14,11 +16,12 @@ public class LoginView {
         password = inputOutput.getStringInput();
 
     }
-    public void validateUserLoginDetails(InputOutput inputOutput, User user, Controller controller) {
+    public void validateUserLoginDetails(InputOutput inputOutput, ArrayList<User> users, Controller controller) {
         getLoginDetail(inputOutput);
-        if(user.checkValidity("#12-1000","shivani"))
-            controller.dispatch();
-        else
-            inputOutput.show("invalid userName/password");
+        for (User user : users) {
+            if (user.checkValidity(userName,password))
+                controller.dispatch();
+        }
+        inputOutput.show("invalid userName/password");
     }
 }
