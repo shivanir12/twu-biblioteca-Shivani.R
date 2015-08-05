@@ -31,13 +31,11 @@ public class CheckOutMovieViewTest {
 
         InputOutput inputOutput = mock(InputOutput.class);
         LibraryOperation libraryOperation = mock(CheckOut.class);
-
-        CheckOutBookView checkOutBookView = new CheckOutBookView(libraryOperation, inputOutput);
+        CheckOutMovieView checkOutMovieView = new CheckOutMovieView(libraryOperation, inputOutput);
 
         when(libraryOperation.execute(anyString())).thenReturn(false);
 
-        checkOutBookView.show();
-        verify(inputOutput).show("That Book is not available");
+        checkOutMovieView.show();
+        verify(inputOutput).show("That movie is not available");
     }
-
 }
