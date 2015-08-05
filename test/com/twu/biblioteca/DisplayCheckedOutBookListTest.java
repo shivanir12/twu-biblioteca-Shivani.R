@@ -1,12 +1,23 @@
 package com.twu.biblioteca;
 
+
+import com.twu.biblioteca.view.UserMenuView;
 import org.junit.Test;
 
-import java.util.ArrayList;
-
-import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public class DisplayCheckedOutBookListTest {
+    @Test
+    public void returnsTheListOfBooks() {
+        Library library = mock(Library.class);
+        InputOutput inputOutput = mock(InputOutput.class);
+        DisplayCheckedOutBookList displayCheckedOutBookList = new DisplayCheckedOutBookList(library,inputOutput);
 
+        when(library.getCheckOutBookListFromLibrary()).thenReturn("Head First Java     sierra              1950\n");
 
+        displayCheckedOutBookList.show();
+        verify(inputOutput).show("Head First Java     sierra              1950\n");
+    }
 }

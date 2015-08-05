@@ -12,13 +12,11 @@ public class DisplayListTest {
     public void returnsTheListOfBooks() {
         Library library = mock(Library.class);
         InputOutput inputOutput = mock(InputOutput.class);
-        UserMenuView userMenuView = mock(UserMenuView.class);
         DisplayList displayList = new DisplayList(library,inputOutput);
 
         when(library.getBookListFromLibrary()).thenReturn("Head First Java     sierra              1950\n");
 
         displayList.show();
         verify(inputOutput).show("Head First Java     sierra              1950\n");
-        verify(userMenuView).showUserMenu();
     }
 }
