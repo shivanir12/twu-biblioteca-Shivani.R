@@ -3,17 +3,20 @@ package com.twu.biblioteca.newview;
 import com.twu.biblioteca.InputOutput;
 import com.twu.biblioteca.User;
 import com.twu.biblioteca.view.DisplayUserProfile;
+import org.junit.Test;
 
-import static javafx.beans.binding.Bindings.when;
-import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
-public class DisplayUserProfileViewTest {
-    public void returnsTheProfile() {
+public class DisplayUserProfileTest {
+
+    @Test
+    public void returnsTheUserDetails() {
         InputOutput inputOutput = mock(InputOutput.class);
         User user1 = mock(User.class);
         DisplayUserProfile displayUserProfile = new DisplayUserProfile(inputOutput, user1);
-        //when(user1).thenReturn(anyString());
 
+        displayUserProfile.show();
+        verify(inputOutput).show(user1.toString());
     }
 }
