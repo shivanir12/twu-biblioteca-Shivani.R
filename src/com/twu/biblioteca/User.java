@@ -33,7 +33,7 @@ public class User {
         if(role.equals("librarian"))
             return true;
         else
-            return false;
+        return false;
     }
 
     @Override

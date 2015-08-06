@@ -31,7 +31,7 @@ public class UserTest {
 
     }@Test
     public void returnsFalseIfTheUserIsLibrarian(){
-
-
+        User user1 = new User("#12-1000", "shivani", "Shivani R", "shivanir@gmail.com", "9481816385", "customer");
+        assertEquals(false,user1.isLibrarian());
     }
 }
