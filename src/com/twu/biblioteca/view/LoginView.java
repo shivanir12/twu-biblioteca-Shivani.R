@@ -19,10 +19,15 @@ public class LoginView {
     }
     public void validateUserLoginDetails(InputOutput inputOutput, ArrayList<User> users, Controller controller) {
         getLoginDetail(inputOutput);
+        int flag = 0;
         for (User user : users) {
-            if (user.checkValidity(userName,password))
+            if (user.checkValidity(userName,password)) {
+                flag=1;
+
                 controller.dispatch();
+            }
         }
+        if(flag == 0)
         inputOutput.show("invalid userName/password");
     }
 }

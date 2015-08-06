@@ -41,20 +41,20 @@ public class Controller {
                 libraryOperation = new CheckOutMovie(library);
                 iview = new CheckOutMovieView(libraryOperation, inputOutput);
                 iview.show();
-            }
-            else if (choice.equals("6")) {
+            } else if (choice.equals("6")) {
                 libraryOperation = new CheckInMovie(library);
                 iview = new ReturnMovieView(libraryOperation, inputOutput);
                 iview.show();
-            }
-            else if (choice.equals("7")) {
+            } else if (choice.equals("7")) {
                 iview = new DisplayCheckedOutBookList(library, inputOutput);
                 iview.show();
             } else if (choice.equals("8")) {
                 iview = new DisplayCheckedOutMovieList(library, inputOutput);
                 iview.show();
-            }else
+            } else {
+                inputOutput.show("invalid option");
                 break;
+            }
         }
     }
 }
