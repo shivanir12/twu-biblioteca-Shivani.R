@@ -26,7 +26,7 @@ public class UserMenuView {
         inputOutput.show(menu);
         inputOutput.show("Enter the choice");
     }
-    public void showAdminMenu(){
+    public void showLibrarianMenu(){
         String menu = "";
         menu += "--*Main Menu*--\n" +
                 "================================\n"+
@@ -39,7 +39,7 @@ public class UserMenuView {
                 "Enter 7 to Log out\n" +
                 "Enter 8 to View my profile\n" +
                 "Enter 9 to Display Checked out books\n" +
-                "Enter 10 to Display Checked out movies";
+                "Enter 10 to Display Checked out movies\n";
         inputOutput.show(menu);
         inputOutput.show("Enter the choice");
 
