@@ -17,44 +17,75 @@ public class Controller {
         this.userMenuView = userMenuView;
     }
 
-    public void dispatch() {
+    public void dispatcher(User user) {
         while (true) {
-            userMenuView.showUserMenu();
+            if (user.isLibrarian())
+                userMenuView.showCustomerMenu();
+            else
+                userMenuView.showLibrarianMenu();
             String choice = inputOutput.getStringInput();
             LibraryOperation libraryOperation;
             Iview iview;
-            if (choice.equals("1")) {
-                iview = new DisplayList(library, inputOutput);
-                iview.show();
-            } else if (choice.equals("2")) {
-                libraryOperation = new CheckOut(library);
-                iview = new CheckOutBookView(libraryOperation, inputOutput);
-                iview.show();
-            } else if (choice.equals("3")) {
-                libraryOperation = new CheckIn(library);
-                iview = new ReturnBookView(libraryOperation, inputOutput);
-                iview.show();
-            } else if (choice.equals("4")) {
-                iview = new DisplayMovieList(library, inputOutput);
-                iview.show();
-            } else if (choice.equals("5")) {
-                libraryOperation = new CheckOutMovie(library);
-                iview = new CheckOutMovieView(libraryOperation, inputOutput);
-                iview.show();
-            } else if (choice.equals("6")) {
-                libraryOperation = new CheckInMovie(library);
-                iview = new ReturnMovieView(libraryOperation, inputOutput);
-                iview.show();
-            } else if (choice.equals("7")) {
-                iview = new DisplayCheckedOutBookList(library, inputOutput);
-                iview.show();
-            } else if (choice.equals("8")) {
-                iview = new DisplayCheckedOutMovieList(library, inputOutput);
-                iview.show();
-            } else {
-                inputOutput.show("invalid option");
-                break;
+            switch (choice) {
+                case "1":
+                    iview = new DisplayList(library, inputOutput);
+                    iview.show();
+                    break;
+                case "2":
+                    libraryOperation = new CheckOut(library);
+                    iview = new CheckOutBookView(libraryOperation, inputOutput);
+                    iview.show();
+                    break;
+                case "3":
+                    libraryOperation = new CheckIn(library);
+                    iview = new ReturnBookView(libraryOperation, inputOutput);
+                    iview.show();
+                    break;
+                case "4":
+                    iview = new DisplayMovieList(library, inputOutput);
+                    iview.show();
+                    break;
+                case "5":
+                    libraryOperation = new CheckOutMovie(library);
+                    iview = new CheckOutMovieView(libraryOperation, inputOutput);
+                    iview.show();
+                    break;
+                case "6":
+                    libraryOperation = new CheckInMovie(library);
+                    iview = new ReturnMovieView(libraryOperation, inputOutput);
+                    iview.show();
+                    break;
+                case "7":
+                    if (user.isLibrarian()) {
+                        iview = new DisplayUserProfile(inputOutput,user);
+                        iview.show();
+                    } else
+                        inputOutput.show("invalid option");
+                    break;
+                case "8":
+                    //iview = new LogOut();
+                    //iview.show();
+                    break;
+                case "9":
+                    if (user.isLibrarian()) {
+                        iview = new DisplayCheckedOutBookList(library, inputOutput);
+                        iview.show();
+                    } else
+                        inputOutput.show("invalid option");
+                    break;
+                case "10":
+                    if (user.isLibrarian()) {
+                        iview = new DisplayCheckedOutMovieList(library, inputOutput);
+                        iview.show();
+                    } else
+                        inputOutput.show("invalid option");
+                    break;
+                default:
+                    inputOutput.show("invalid option");
+                    break;
             }
         }
     }
 }
+
+

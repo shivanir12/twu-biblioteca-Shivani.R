@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.view.InitialView;
 import com.twu.biblioteca.view.LoginView;
 import com.twu.biblioteca.view.UserMenuView;
 
@@ -44,6 +45,8 @@ public class Main {
         Controller controller = new Controller(inputOutput, library, userMenuView);
 
         LoginView loginView = new LoginView();
-        loginView.validateUserLoginDetails(inputOutput, users, controller);
+
+        InitialView initialView = new InitialView(inputOutput,users,loginView,userMenuView,controller);
+        initialView.showInitialMenu();
     }
 }

@@ -28,4 +28,21 @@ public class User {
             return false;
         }
     }
+
+    public String getRole() {
+        return role;
+    }
+
+    public boolean isLibrarian(){
+        if(role.equals("librarian"))
+            return true;
+        else
+            return false;
+    }
+
+    @Override
+    public String toString() {
+        String details = String.format("%-20s%-20s%-20s%-20s\n",userName,name,email,phNo);
+        return details;
+    }
 }

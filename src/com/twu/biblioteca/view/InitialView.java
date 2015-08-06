@@ -23,11 +23,15 @@ public class InitialView {
     }
 
     public void showInitialMenu(){
-        inputOutput.show("1.Login\n2.Quit\n");
-        String option = inputOutput.getStringInput();
-        if(option.equals("1"))
-            loginView.validateUserLoginDetails(inputOutput, users, controller);
-
-
+        while (true) {
+            inputOutput.show("1.Login\n2.Quit\n");
+            String option = inputOutput.getStringInput();
+            if (option.equals("1"))
+                loginView.validateUserLoginDetails(inputOutput, users, controller);
+            else if (option.equals("2"))
+                System.exit(0);
+            else
+                inputOutput.show("Enter a valid option");
+        }
     }
 }

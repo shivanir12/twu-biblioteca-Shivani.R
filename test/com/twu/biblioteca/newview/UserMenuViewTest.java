@@ -22,7 +22,7 @@ public class UserMenuViewTest {
                 "Enter 7 to Log out\n" +
                 "Enter 8 to View my profile\n";
         UserMenuView userMenuView = new UserMenuView(inputOutput);
-        userMenuView.showUserMenu();
+        userMenuView.showCustomerMenu();
         verify(inputOutput).show(menu);
     }
 

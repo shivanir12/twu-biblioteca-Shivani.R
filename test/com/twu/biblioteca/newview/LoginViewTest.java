@@ -30,7 +30,7 @@ public class LoginViewTest {
 
         loginView.validateUserLoginDetails(inputOutput, users, controller);
 
-        verify(controller).dispatch();
+        verify(controller, atLeast(1)).dispatcher(user1);
 
     }
     @Test

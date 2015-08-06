@@ -10,24 +10,24 @@ public class LoginView {
     public String userName;
     public String password;
 
-    private void getLoginDetail(InputOutput inputOutput){
+    private void getLoginDetail(InputOutput inputOutput) {
         inputOutput.show("Enter the User Name");
-        userName =  inputOutput.getStringInput();
+        userName = inputOutput.getStringInput();
         inputOutput.show("Enter the Password");
         password = inputOutput.getStringInput();
 
     }
-    public void validateUserLoginDetails(InputOutput inputOutput, ArrayList<User> users, Controller controller) {
-        getLoginDetail(inputOutput);
-        int flag = 0;
-        for (User user : users) {
-            if (user.checkValidity(userName,password)) {
-                flag=1;
 
-                controller.dispatch();
+    public void validateUserLoginDetails(InputOutput inputOutput, ArrayList<User> users, Controller controller) {
+            getLoginDetail(inputOutput);
+            int flag = 0;
+            for (User user : users) {
+                if (user.checkValidity(userName, password)) {
+                    flag = 1;
+                        controller.dispatcher(user);
+                }
             }
-        }
-        if(flag == 0)
-        inputOutput.show("invalid userName/password");
+            if (flag == 0)
+                inputOutput.show("invalid userName/password");
     }
 }

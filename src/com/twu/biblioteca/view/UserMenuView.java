@@ -11,7 +11,7 @@ public class UserMenuView {
         this.inputOutput = inputOutput;
     }
 
-    public void showUserMenu() {
+    public void showCustomerMenu() {
         String menu = "";
         menu += "--*Main Menu*--\n" +
                 "================================\n"+
