@@ -24,4 +24,14 @@ public class UserTest {
         String result = user1.toString();
         assertEquals(result,"#12-1000            Shivani R           shivanir@gmail.com  9481816385          \n");
     }
+    @Test
+    public void returnsTrueIfTheUserIsLibrarian(){
+        User user1 = new User("#12-1000", "shivani", "Shivani R", "shivanir@gmail.com", "9481816385", "librarian");
+        assertEquals(true,user1.isLibrarian());
+
+    }@Test
+    public void returnsFalseIfTheUserIsLibrarian(){
+
+
+    }
 }

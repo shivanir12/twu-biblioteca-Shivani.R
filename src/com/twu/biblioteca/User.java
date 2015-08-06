@@ -29,10 +29,6 @@ public class User {
         }
     }
 
-    public String getRole() {
-        return role;
-    }
-
     public boolean isLibrarian(){
         if(role.equals("librarian"))
             return true;
