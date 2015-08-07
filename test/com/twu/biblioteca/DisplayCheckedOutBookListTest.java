@@ -12,9 +12,10 @@ public class DisplayCheckedOutBookListTest {
     public void returnsTheListOfCheckedOutBooks() {
         Library library = mock(Library.class);
         InputOutput inputOutput = mock(InputOutput.class);
-        DisplayCheckedOutBookList displayCheckedOutBookList = new DisplayCheckedOutBookList(library,inputOutput);
+        User user = mock(User.class);
+        DisplayCheckedOutBookList displayCheckedOutBookList = new DisplayCheckedOutBookList(library,inputOutput,user);
 
-        when(library.getCheckOutBookListFromLibrary()).thenReturn("Head First Java     sierra              1950\n");
+        when(library.getCheckOutBookListFromLibrary(user)).thenReturn("Head First Java     sierra              1950\n");
 
         displayCheckedOutBookList.show();
         verify(inputOutput).show("Head First Java     sierra              1950\n");

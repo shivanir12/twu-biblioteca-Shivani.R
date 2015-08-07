@@ -9,6 +9,20 @@ public class User {
     private final String phNo;
     private final String role;
 
+    public String getPhNo() {
+        return phNo;
+    }
+
+    public String getEmail() {
+
+        return email;
+    }
+
+    public String getName() {
+
+        return name;
+    }
+
     public String getUserId() {
         return userId;
     }

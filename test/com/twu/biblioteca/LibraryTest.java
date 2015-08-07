@@ -68,7 +68,7 @@ public class LibraryTest {
         User user1 = new User("123-1000", "shivani","Shivani R","shivanir@gmail.com","9481816385","customer");
         ArrayList<Movie> movieList = new ArrayList<>();HashMap<Movie, String> checkOutMovieDetails = new HashMap<>();
         HashMap<Book, String> checkOutBookDetails = new HashMap<>();
-        checkOutBookDetails.put(book1,"123-1001");
+        checkOutBookDetails.put(book1,"123-1000");
         Library library = new Library(availableBookList, movieList, checkOutBookDetails, checkOutMovieDetails);
         assertEquals(false,library.checkInBook("java", user1));
     }
@@ -103,9 +103,11 @@ public class LibraryTest {
         Book book1 = new Book("WWW", "robert", "1950");
         HashMap<Movie, String> checkOutMovieDetails = new HashMap<>();
         HashMap<Book, String> checkOutBookDetails = new HashMap<>();
+        checkOutBookDetails.put(book1,"123-1000");
+        User user1 = new User("123-1000", "shivani","Shivani R","shivanir@gmail.com","9481816385","customer");
         Library library = new Library(availableBookList, movieList, checkOutBookDetails, checkOutMovieDetails);
-        String expectedResult = ""+String.format("%-20s%-20s%s\n","WWW","robert","1950");
-        assertEquals(expectedResult,library.getCheckOutBookListFromLibrary());
+        String expectedResult = ""+String.format("%-20s%-20s%-20s%-20s\n", "WWW", "123-1000","Shivani R","9481816385");
+        assertEquals(expectedResult,library.getCheckOutBookListFromLibrary(user1));
     }
     @Test
     public void returnsTrueIfMovieIsAvailableInMovieList() {
@@ -137,24 +139,24 @@ public class LibraryTest {
         ArrayList<Book> availableBookList = new ArrayList<>();
         ArrayList<Movie> movieList = new ArrayList<>();
         Movie movie1 = new Movie("manam","1960","anup","9");
-        //checkOutMovieList.add(movie1);
         HashMap<Movie, String> checkOutMovieDetails = new HashMap<>();
         HashMap<Book, String> checkOutBookDetails = new HashMap<>();
+        checkOutMovieDetails.put(movie1, "123-1000");
         Library library = new Library(availableBookList, movieList, checkOutBookDetails, checkOutMovieDetails);
         User user1 = new User("123-1000", "shivani","Shivani R","shivanir@gmail.com","9481816385","customer");
         assertEquals(true,library.checkInMovie("manam", user1));
     }
 
     @Test
-    public void returnsFalseIfMovieIsAvailableInCheckOutMovieList() {
+    public void returnsFalseIfMovieIsNotAvailableInCheckOutMovieList() {
         ArrayList<Book> availableBookList = new ArrayList<>();
         ArrayList<Movie> movieList = new ArrayList<>();
         Movie movie1 = new Movie("manam","1960","anup","9");
         User user1 = new User("123-1000", "shivani","Shivani R","shivanir@gmail.com","9481816385","customer");
-        //checkOutMovieList.add(movie1);
         HashMap<Movie, String> checkOutMovieDetails = new HashMap<>();
         HashMap<Book, String> checkOutBookDetails = new HashMap<>();
+        checkOutMovieDetails.put(movie1, "123-1001");
         Library library = new Library(availableBookList, movieList, checkOutBookDetails, checkOutMovieDetails);
-        assertEquals(false,library.checkInMovie("neninte", user1));
+        assertEquals(false,library.checkInMovie("appu", user1));
     }
 }

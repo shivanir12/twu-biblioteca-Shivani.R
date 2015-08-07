@@ -44,12 +44,10 @@ public class Library {
         }
         return movieDetails;
     }
-
-    public String getCheckOutBookListFromLibrary() {
+    public String getCheckOutBookListFromLibrary(User user) {
         String bookDetails = "";
         for (Book book : checkOutBookDetails.keySet()) {
-            bookDetails += String.format("%-20s%-20s%s\n", book.getBookName(),
-                    book.getAuthor(), book.getYearOfPublication());
+            bookDetails += String.format("%-20s%-20s%-20s%-20s\n", book.getBookName(), user.getUserId(),user.getName(),user.getPhNo());
         }
         return bookDetails;
     }
@@ -78,14 +76,6 @@ public class Library {
         return false;
     }
 
-    private Movie searchForMovieInTheList(String name, ArrayList<Movie> movieList) {
-        for (Movie movie : movieList) {
-            if (movie.hasTitle(name))
-                return movie;
-        }
-        return null;
-    }
-
     public boolean checkoutMovie(String movieName, User user) {
         for (Movie movie : movieList) {
             if (movie.hasTitle(movieName)) {
@@ -98,14 +88,15 @@ public class Library {
     }
 
     public boolean checkInMovie(String movieName, User user) {
-        //Movie movie = searchForMovieInTheList(movieName, checkOutMovieList);
-        //if ((movie == null)) {
-          //  return false;
-        //} else {
-
-            return true;
-        //}
+        for(Movie movie : checkOutMovieDetails.keySet()){
+            String thatUserId = checkOutMovieDetails.get(movie);
+            if(movie.hasTitle(movieName) && thatUserId.equals(user.getUserId()))
+            {
+                movieList.add(movie);
+                checkOutMovieDetails.remove(movie);
+                return true;
+            }
+        }
+        return false;
     }
-
-
 }

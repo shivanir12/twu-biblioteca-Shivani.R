@@ -20,9 +20,9 @@ public class Controller {
     public void dispatcher(User user) {
         while (true) {
             if (user.isLibrarian())
-                userMenuView.showCustomerMenu();
-            else
                 userMenuView.showLibrarianMenu();
+            else
+                userMenuView.showCustomerMenu();
             String choice = inputOutput.getStringInput();
             LibraryOperation libraryOperation;
             Iview iview;
@@ -66,7 +66,7 @@ public class Controller {
                     break;
                 case "9":
                     if (user.isLibrarian()) {
-                        iview = new DisplayCheckedOutBookList(library, inputOutput);
+                        iview = new DisplayCheckedOutBookList(library, inputOutput, user);
                         iview.show();
                     } else
                         inputOutput.show("invalid option");
