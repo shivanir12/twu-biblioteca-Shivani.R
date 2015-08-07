@@ -1,25 +1,28 @@
 package com.twu.biblioteca;
 
 public class Movie {
-    private final String name;
+    private final String movieName;
     private final String year;
     private final String director;
     private final String movieRating;
 
     @Override
     public String toString() {
-        return String.format("%-20s%-20s%-20s%-20s\n",name, year, director, movieRating);
+        return String.format("%-20s%-20s%-20s%-20s\n", movieName, year, director, movieRating);
     }
 
-    public Movie(String name, String year, String director, String movieRating) {
-        this.name = name;
+    public Movie(String movieName, String year, String director, String movieRating) {
+        this.movieName = movieName;
         this.year = year;
         this.director = director;
         this.movieRating = movieRating;
     }
 
     public boolean hasTitle(String movieName){
-        return name.equalsIgnoreCase(movieName);
+        return this.movieName.equalsIgnoreCase(movieName);
     }
 
+    public String getMovieName() {
+        return movieName;
+    }
 }

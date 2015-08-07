@@ -37,10 +37,10 @@ public class Library {
         return movieDetails;
     }
 
-    public String getCheckOutMovieListFromLibrary() {
+    public String getCheckOutMovieListFromLibrary(User user) {
         String movieDetails = "";
         for (Movie movie : checkOutMovieDetails.keySet()) {
-            movieDetails += movie.toString();
+            movieDetails += String.format("%-20s%-20s%-20s%-20s\n", movie.getMovieName(), user.getUserId(),user.getName(),user.getPhNo());
         }
         return movieDetails;
     }

@@ -12,9 +12,10 @@ public class DisplayCheckOutMovieListTest {
     public void returnsTheListOfCheckedOutMovies() {
         Library library = mock(Library.class);
         InputOutput inputOutput = mock(InputOutput.class);
-        DisplayCheckedOutMovieList displayCheckedOutMovieList = new DisplayCheckedOutMovieList(library,inputOutput);
+        User user = mock(User.class);
+        DisplayCheckedOutMovieList displayCheckedOutMovieList = new DisplayCheckedOutMovieList(library,inputOutput, user);
 
-        when(library.getCheckOutMovieListFromLibrary()).thenReturn("manam   1960   anup   9\n");
+        when(library.getCheckOutMovieListFromLibrary(user)).thenReturn("manam   1960   anup   9\n");
 
         displayCheckedOutMovieList.show();
         verify(inputOutput).show("manam   1960   anup   9\n");

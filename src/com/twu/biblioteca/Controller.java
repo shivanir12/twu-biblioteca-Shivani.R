@@ -73,7 +73,7 @@ public class Controller {
                     break;
                 case "10":
                     if (user.isLibrarian()) {
-                        iview = new DisplayCheckedOutMovieList(library, inputOutput);
+                        iview = new DisplayCheckedOutMovieList(library, inputOutput, user);
                         iview.show();
                     } else
                         inputOutput.show("invalid option");
