@@ -18,6 +18,7 @@ public class Controller {
     }
 
     public void dispatcher(User user) {
+        boolean status = false;
         while (true) {
             if (user.isLibrarian())
                 userMenuView.showLibrarianMenu();
@@ -26,6 +27,8 @@ public class Controller {
             String choice = inputOutput.getStringInput();
             LibraryOperation libraryOperation;
             Iview iview;
+            if (choice.equals("7"))
+                break;
             switch (choice) {
                 case "1":
                     iview = new DisplayList(library, inputOutput);
@@ -57,6 +60,7 @@ public class Controller {
                     break;
 
                 case "7":
+                    status = true;
                     //iview = new LogOut();
                     //iview.show();
                     break;

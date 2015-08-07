@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
 
-<project movieName="newBibliotica" default="runjar" basedir=".">
+<project name="newBibliotica" default="runjar" basedir=".">
 
-    <property movieName="lib.dir" value="lib"/>
+    <property name="lib.dir" value="lib"/>
 
     <path id="classpath">
         <fileset dir="${lib.dir}" includes="junit-4.11.jar"/>
         <fileset dir="${lib.dir}" includes="mockito-all-1.9.5.jar"/>
     </path>
 
-    <target movieName="compile">
+    <target name="compile">
         <javac srcdir="src" includeantruntime="false" destdir="out" classpathref="classpath"/>
         <javac srcdir="test" includeantruntime="false" destdir="out" classpathref="classpath"/>
     </target>
 
-    <target movieName="runjunit" depends="compile">
+    <target name="runjunit" depends="compile">
         <junit haltonfailure="true" printsummary="true" showoutput="yes">
-            <test movieName="com.twu.biblioteca.InputOutputTest"/>
+            <test name="com.twu.biblioteca.InputOutputTest"/>
             <classpath>
                 <pathelement location="out"/>
                 <path refid="classpath"/>
@@ -25,18 +25,18 @@
         </junit>
     </target>
 
-    <target movieName="buildjar" depends="runjunit">
+    <target name="buildjar" depends="runjunit">
         <jar destfile="build/biblioteca.jar"
              basedir="out/"
              includes="**/*.class">
             <manifest>
-                <attribute movieName="Main-Class"
+                <attribute name="Main-Class"
                            value="com.twu.biblioteca.Main"/>
             </manifest>
         </jar>
     </target>
 
-    <target movieName="runjar" depends="buildjar">
+    <target name="runjar" depends="buildjar">
         <java fork="true" classname="com.twu.biblioteca.Main">
             <classpath>
                 <path refid="classpath"/>
