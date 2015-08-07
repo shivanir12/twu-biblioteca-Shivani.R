@@ -1,6 +1,7 @@
 package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.InputOutput;
+import com.twu.biblioteca.LibraryOperationView.Iview;
 import com.twu.biblioteca.User;
 
 public class DisplayUserProfile implements Iview {

@@ -1,6 +1,9 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.Controller;
 
 
+import com.twu.biblioteca.*;
+import com.twu.biblioteca.LibraryOperation.*;
+import com.twu.biblioteca.LibraryOperationView.*;
 import com.twu.biblioteca.view.*;
 
 //Accepts the choice and calls the associated methods
@@ -18,7 +21,6 @@ public class Controller {
     }
 
     public void dispatcher(User user) {
-        boolean status = false;
         while (true) {
             if (user.isLibrarian())
                 userMenuView.showLibrarianMenu();
@@ -60,24 +62,20 @@ public class Controller {
                     break;
 
                 case "7":
-                    status = true;
-                    //iview = new LogOut();
-                    //iview.show();
-                    break;
                 case "8":
                     iview = new DisplayUserProfile(inputOutput, user);
                     iview.show();
                     break;
                 case "9":
                     if (user.isLibrarian()) {
-                        iview = new DisplayCheckedOutBookList(library, inputOutput, user);
+                        iview = new DisplayCheckedOutBookList(library, inputOutput);
                         iview.show();
                     } else
                         inputOutput.show("invalid option");
                     break;
                 case "10":
                     if (user.isLibrarian()) {
-                        iview = new DisplayCheckedOutMovieList(library, inputOutput, user);
+                        iview = new DisplayCheckedOutMovieList(library, inputOutput);
                         iview.show();
                     } else
                         inputOutput.show("invalid option");

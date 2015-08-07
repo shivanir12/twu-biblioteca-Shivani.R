@@ -1,6 +1,6 @@
 package com.twu.biblioteca.view;
 
-import com.twu.biblioteca.Controller;
+import com.twu.biblioteca.Controller.Controller;
 import com.twu.biblioteca.InputOutput;
 import com.twu.biblioteca.User;
 

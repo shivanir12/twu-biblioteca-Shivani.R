@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 
+import com.twu.biblioteca.LibraryOperationView.DisplayCheckedOutBookList;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
@@ -13,9 +14,9 @@ public class DisplayCheckedOutBookListTest {
         Library library = mock(Library.class);
         InputOutput inputOutput = mock(InputOutput.class);
         User user = mock(User.class);
-        DisplayCheckedOutBookList displayCheckedOutBookList = new DisplayCheckedOutBookList(library,inputOutput,user);
+        DisplayCheckedOutBookList displayCheckedOutBookList = new DisplayCheckedOutBookList(library,inputOutput);
 
-        when(library.getCheckOutBookListFromLibrary(user)).thenReturn("Head First Java     sierra              1950\n");
+        when(library.getCheckOutBookListFromLibrary()).thenReturn("Head First Java     sierra              1950\n");
 
         displayCheckedOutBookList.show();
         verify(inputOutput).show("Head First Java     sierra              1950\n");

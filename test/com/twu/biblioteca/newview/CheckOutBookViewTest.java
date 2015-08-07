@@ -1,7 +1,8 @@
 package com.twu.biblioteca.newview;
 
-import com.twu.biblioteca.*;
-import com.twu.biblioteca.view.CheckOutBookView;
+import com.twu.biblioteca.LibraryOperation.CheckOut;
+import com.twu.biblioteca.LibraryOperation.LibraryOperation;
+import com.twu.biblioteca.LibraryOperationView.CheckOutBookView;
 import com.twu.biblioteca.InputOutput;
 import org.junit.Test;
 

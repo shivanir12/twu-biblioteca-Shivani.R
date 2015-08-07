@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.view.Iview;
+import com.twu.biblioteca.LibraryOperationView.Iview;
 
 public class DisplayList implements Iview {
 

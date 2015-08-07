@@ -1,10 +1,10 @@
 package com.twu.biblioteca.newview;
 
-import com.twu.biblioteca.CheckOut;
 import com.twu.biblioteca.InputOutput;
-import com.twu.biblioteca.LibraryOperation;
-import com.twu.biblioteca.view.ReturnBookView;
-import com.twu.biblioteca.view.ReturnMovieView;
+import com.twu.biblioteca.LibraryOperation.CheckOut;
+import com.twu.biblioteca.LibraryOperation.LibraryOperation;
+import com.twu.biblioteca.LibraryOperationView.ReturnBookView;
+import com.twu.biblioteca.LibraryOperationView.ReturnMovieView;
 import org.junit.Test;
 
 import static org.mockito.Matchers.anyString;

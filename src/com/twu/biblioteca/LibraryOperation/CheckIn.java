@@ -1,4 +1,7 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.LibraryOperation;
+
+import com.twu.biblioteca.Library;
+import com.twu.biblioteca.User;
 
 public class CheckIn implements LibraryOperation {
     private Library library;

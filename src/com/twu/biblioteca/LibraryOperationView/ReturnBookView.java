@@ -1,7 +1,7 @@
-package com.twu.biblioteca.view;
+package com.twu.biblioteca.LibraryOperationView;
 
 import com.twu.biblioteca.InputOutput;
-import com.twu.biblioteca.LibraryOperation;
+import com.twu.biblioteca.LibraryOperation.LibraryOperation;
 
 public class ReturnBookView implements Iview {
 

@@ -1,6 +1,6 @@
 package com.twu.biblioteca.newview;
 
-import com.twu.biblioteca.Controller;
+import com.twu.biblioteca.Controller.Controller;
 import com.twu.biblioteca.User;
 import com.twu.biblioteca.InputOutput;
 import com.twu.biblioteca.view.LoginView;

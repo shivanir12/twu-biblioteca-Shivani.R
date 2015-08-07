@@ -37,17 +37,17 @@ public class Library {
         return movieDetails;
     }
 
-    public String getCheckOutMovieListFromLibrary(User user) {
+    public String getCheckOutMovieListFromLibrary() {
         String movieDetails = "";
         for (Movie movie : checkOutMovieDetails.keySet()) {
-            movieDetails += String.format("%-20s%-20s%-20s%-20s\n", movie.getMovieName(), user.getUserId(),user.getName(),user.getPhNo());
+            movieDetails += String.format("%-20s%-20s\n", movie.getMovieName(), checkOutMovieDetails.get(movie));
         }
         return movieDetails;
     }
-    public String getCheckOutBookListFromLibrary(User user) {
+    public String getCheckOutBookListFromLibrary() {
         String bookDetails = "";
         for (Book book : checkOutBookDetails.keySet()) {
-            bookDetails += String.format("%-20s%-20s%-20s%-20s\n", book.getBookName(), user.getUserId(),user.getName(),user.getPhNo());
+            bookDetails += String.format("%-20s%-20s\n", book.getBookName(), checkOutBookDetails.get(book));
         }
         return bookDetails;
     }
