@@ -42,7 +42,5 @@ public class UserMenuView {
                 "Enter 10 to Display Checked out movies\n";
         inputOutput.show(menu);
         inputOutput.show("Enter the choice");
-
-
     }
 }

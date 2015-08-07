@@ -1,127 +1,111 @@
 package com.twu.biblioteca;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 //Library class can display list of books, checkin and checkout books
 public class Library {
     ArrayList<Book> availableBookList;
-    private ArrayList<Book> checkOutBookList;
     private final ArrayList<Movie> movieList;
-    private final ArrayList<Movie> checkOutMovieList;
+    private final HashMap<Book, String> checkOutBookDetails;
+    private final HashMap<Movie, String> checkOutMovieDetails;
 
-    public Library(ArrayList<Book> bookList, ArrayList<Book> checkOutBookList, ArrayList<Movie> movieList, ArrayList<Movie> checkOutMovieList) {
+    public Library(ArrayList<Book> bookList, ArrayList<Movie> movieList,
+                    HashMap<Book, String> checkOutBookDetails, HashMap<Movie, String> checkOutMovieDetails) {
         this.availableBookList = bookList;
-        this.checkOutBookList = checkOutBookList;
         this.movieList = movieList;
-        this.checkOutMovieList = checkOutMovieList;
+        this.checkOutBookDetails = checkOutBookDetails;
+        this.checkOutMovieDetails = checkOutMovieDetails;
     }
 
 
     public String getBookListFromLibrary() {
         String bookDetails = "";
         for (Book book : availableBookList) {
-             bookDetails += String.format("%-20s%-20s%s\n", book.getBookName(),
-                     book.getAuthor(), book.getYearOfPublication());
-        }
-        return bookDetails;
-    }
-    public String getMovieListFromLibrary() {
-        String movieDetails = "";
-        for (Movie movie: movieList) {
-            movieDetails += movie.toString();
-        }
-        return movieDetails;
-    }
-    public String getCheckOutMovieListFromLibrary() {
-        String movieDetails = "";
-        for (Movie movie: checkOutMovieList) {
-            movieDetails += movie.toString();
-        }
-        return movieDetails;
-    }
-
-    private Book searchForBookInTheList(String name,ArrayList<Book> bookList){
-        for(Book book : bookList){
-            if(book.hasTitle(name))
-                return book;
-        }
-        return null;
-    }
-
-    public boolean checkoutBook(String bookName) {
-        Book book = searchForBookInTheList(bookName, availableBookList);
-        if ((book == null)) {
-            return false;
-        } else {
-            updateBookListAfterCheckOut(book);
-            return true;
-        }
-    }
-
-    private void updateBookListAfterCheckOut(Book book) {
-        checkOutBookList.add(book);
-        availableBookList.remove(book);
-    }
-
-    public boolean checkInBook(String bookName) {
-        Book book = searchForBookInTheList(bookName, checkOutBookList);
-        if(!(book == null)){
-            updateBookListAfterCheckIn(book);
-            return true;
-        }
-        return false;
-    }
-
-    private void updateBookListAfterCheckIn(Book book) {
-        availableBookList.add(book);
-        checkOutBookList.remove(book);
-    }
-
-    private Movie searchForMovieInTheList(String name,ArrayList<Movie> movieList){
-        for(Movie movie : movieList){
-            if(movie.hasTitle(name))
-                return movie;
-        }
-        return null;
-    }
-
-    public boolean checkoutMovie(String movieName) {
-        Movie movie = searchForMovieInTheList(movieName, movieList);
-        if ((movie == null)) {
-            return false;
-        } else {
-            updateMovieListAfterCheckOut(movie);
-            return true;
-        }
-    }
-
-    private void updateMovieListAfterCheckOut(Movie movie) {
-        checkOutMovieList.add(movie);
-        movieList.remove(movie);
-    }
-
-    public boolean checkInMovie(String movieName) {
-        Movie movie = searchForMovieInTheList(movieName, checkOutMovieList);
-        if ((movie == null)) {
-            return false;
-        } else {
-            updateMovieListAfterCheckIn(movie);
-            return true;
-        }
-    }
-
-    private void updateMovieListAfterCheckIn(Movie movie) {
-        movieList.add(movie);
-        checkOutMovieList.remove(movie);
-    }
-
-    public String getCheckOutBookListFromLibrary() {
-        String bookDetails = "";
-        for (Book book : checkOutBookList) {
             bookDetails += String.format("%-20s%-20s%s\n", book.getBookName(),
                     book.getAuthor(), book.getYearOfPublication());
         }
         return bookDetails;
     }
+
+    public String getMovieListFromLibrary() {
+        String movieDetails = "";
+        for (Movie movie : movieList) {
+            movieDetails += movie.toString();
+        }
+        return movieDetails;
+    }
+
+    public String getCheckOutMovieListFromLibrary() {
+        String movieDetails = "";
+        for (Movie movie : checkOutMovieDetails.keySet()) {
+            movieDetails += movie.toString();
+        }
+        return movieDetails;
+    }
+
+    public String getCheckOutBookListFromLibrary() {
+        String bookDetails = "";
+        for (Book book : checkOutBookDetails.keySet()) {
+            bookDetails += String.format("%-20s%-20s%s\n", book.getBookName(),
+                    book.getAuthor(), book.getYearOfPublication());
+        }
+        return bookDetails;
+    }
+
+    public boolean checkoutBook(String bookName, User user) {
+        for (Book book : availableBookList) {
+            if (book.hasTitle(bookName)) {
+                checkOutBookDetails.put(book, user.getUserId());
+                availableBookList.remove(book);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean checkInBook(String bookName, User user) {
+        for(Book book : checkOutBookDetails.keySet()){
+            String thatUserId = checkOutBookDetails.get(book);
+            if(book.hasTitle(bookName) && thatUserId.equals(user.getUserId()))
+            {
+                availableBookList.add(book);
+                checkOutBookDetails.remove(book);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Movie searchForMovieInTheList(String name, ArrayList<Movie> movieList) {
+        for (Movie movie : movieList) {
+            if (movie.hasTitle(name))
+                return movie;
+        }
+        return null;
+    }
+
+    public boolean checkoutMovie(String movieName, User user) {
+        for (Movie movie : movieList) {
+            if (movie.hasTitle(movieName)) {
+                checkOutMovieDetails.put(movie, user.getUserId());
+                movieList.remove(movie);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean checkInMovie(String movieName, User user) {
+        //Movie movie = searchForMovieInTheList(movieName, checkOutMovieList);
+        //if ((movie == null)) {
+          //  return false;
+        //} else {
+
+            return true;
+        //}
+    }
+
+
 }

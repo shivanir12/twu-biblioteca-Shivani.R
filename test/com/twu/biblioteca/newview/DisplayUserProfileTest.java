@@ -19,4 +19,13 @@ public class DisplayUserProfileTest {
         displayUserProfile.show();
         verify(inputOutput).show(user1.toString());
     }
+    @Test
+    public void returnsTheInvalidString() {
+        InputOutput inputOutput = mock(InputOutput.class);
+        User user1 = mock(User.class);
+        DisplayUserProfile displayUserProfile = new DisplayUserProfile(inputOutput, user1);
+
+        displayUserProfile.show();
+        verify(inputOutput).show(user1.toString());
+    }
 }

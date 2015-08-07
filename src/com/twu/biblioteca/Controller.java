@@ -32,12 +32,12 @@ public class Controller {
                     iview.show();
                     break;
                 case "2":
-                    libraryOperation = new CheckOut(library);
+                    libraryOperation = new CheckOut(library, user);
                     iview = new CheckOutBookView(libraryOperation, inputOutput);
                     iview.show();
                     break;
                 case "3":
-                    libraryOperation = new CheckIn(library);
+                    libraryOperation = new CheckIn(library, user);
                     iview = new ReturnBookView(libraryOperation, inputOutput);
                     iview.show();
                     break;
@@ -46,25 +46,23 @@ public class Controller {
                     iview.show();
                     break;
                 case "5":
-                    libraryOperation = new CheckOutMovie(library);
+                    libraryOperation = new CheckOutMovie(library,user);
                     iview = new CheckOutMovieView(libraryOperation, inputOutput);
                     iview.show();
                     break;
                 case "6":
-                    libraryOperation = new CheckInMovie(library);
+                    libraryOperation = new CheckInMovie(library, user);
                     iview = new ReturnMovieView(libraryOperation, inputOutput);
                     iview.show();
                     break;
+
                 case "7":
-                    if (user.isLibrarian()) {
-                        iview = new DisplayUserProfile(inputOutput,user);
-                        iview.show();
-                    } else
-                        inputOutput.show("invalid option");
-                    break;
-                case "8":
                     //iview = new LogOut();
                     //iview.show();
+                    break;
+                case "8":
+                    iview = new DisplayUserProfile(inputOutput, user);
+                    iview.show();
                     break;
                 case "9":
                     if (user.isLibrarian()) {

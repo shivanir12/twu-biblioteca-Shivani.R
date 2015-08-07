@@ -5,6 +5,7 @@ import com.twu.biblioteca.view.LoginView;
 import com.twu.biblioteca.view.UserMenuView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 //This Class is the entry point for the application.
@@ -28,9 +29,9 @@ public class Main {
         movieList.add(movie3);
 
         InputOutput inputOutput = new InputOutput();
-        ArrayList<Book> checkoutBookList = new ArrayList<>();
-        ArrayList<Movie> checkOutMovieList = new ArrayList<>();
-        Library library = new Library(availableBookList, checkoutBookList, movieList, checkOutMovieList);
+        HashMap<Book,String> checkOutBookDetails = new HashMap<>();
+        HashMap<Movie,String> checkOutMovieDetails = new HashMap<>();
+        Library library = new Library(availableBookList, movieList, checkOutBookDetails,checkOutMovieDetails);
 
         User user1 = new User("123-1000", "shivani","Shivani R","shivanir@gmail.com","9481816385","customer");
         User user2 = new User("123-1001","poorva","poorva","poorva@gmail.com","9481816386","librarian");

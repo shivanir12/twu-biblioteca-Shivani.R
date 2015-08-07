@@ -2,19 +2,24 @@ package com.twu.biblioteca;
 
 public class User {
 
-    private String userName;
+    private String userId;
     private String password;
     private final String name;
     private final String email;
     private final String phNo;
     private final String role;
 
-    public User(String userName, String password, String name, String email, String phNo, String role) {
+    public String getUserId() {
+        return userId;
+    }
 
-        this.userName = userName;
+    public User(String userId, String password, String name, String email, String phNo, String role) {
+
+        this.userId = userId;
         this.password = password;
         this.name = name;
         this.email = email;
+
         this.phNo = phNo;
         this.role = role;
     }
@@ -22,7 +27,7 @@ public class User {
 
     public boolean checkValidity(String thatUserName,String thatPassword) {
 
-        if (userName.equals(thatUserName) && password.equals(thatPassword)) {
+        if (userId.equals(thatUserName) && password.equals(thatPassword)) {
             return true;
         } else {
             return false;
@@ -38,7 +43,7 @@ public class User {
 
     @Override
     public String toString() {
-        String details = String.format("%-20s%-20s%-20s%-20s\n",userName,name,email,phNo);
+        String details = String.format("%-20s%-20s%-20s%-20s\n", userId,name,email,phNo);
         return details;
     }
 }
