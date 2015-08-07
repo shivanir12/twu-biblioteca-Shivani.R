@@ -89,9 +89,9 @@ public class LibraryTest {
         ArrayList<Book> availableBookList = new ArrayList<>();
         ArrayList<Movie> movieList = new ArrayList<>();
         Movie movie1 = new Movie("manam","1960","anup","9");
-        //checkOutMovieList.add(movie1);
         HashMap<Movie, String> checkOutMovieDetails = new HashMap<>();
         HashMap<Book, String> checkOutBookDetails = new HashMap<>();
+        checkOutMovieDetails.put(movie1,"123-1001");
         Library library = new Library(availableBookList, movieList, checkOutBookDetails, checkOutMovieDetails);
         String expectedResult = ""+String.format("%-20s%-20s%-20s%-20s\n","manam","1960","anup", "9");
         assertEquals(expectedResult,library.getCheckOutMovieListFromLibrary());
@@ -101,7 +101,6 @@ public class LibraryTest {
         ArrayList<Book> availableBookList = new ArrayList<>();
         ArrayList<Movie> movieList = new ArrayList<>();
         Book book1 = new Book("WWW", "robert", "1950");
-        //checkoutBookList.add(book1);
         HashMap<Movie, String> checkOutMovieDetails = new HashMap<>();
         HashMap<Book, String> checkOutBookDetails = new HashMap<>();
         Library library = new Library(availableBookList, movieList, checkOutBookDetails, checkOutMovieDetails);
