@@ -31,13 +31,13 @@
              includes="**/*.class">
             <manifest>
                 <attribute name="Main-Class"
-                           value="com.twu.biblioteca.Main"/>
+                           value="com.twu.biblioteca.Model.Main"/>
             </manifest>
         </jar>
     </target>
 
     <target name="runjar" depends="buildjar">
-        <java fork="true" classname="com.twu.biblioteca.Main">
+        <java fork="true" classname="com.twu.biblioteca.Model.Main">
             <classpath>
                 <path refid="classpath"/>
                 <path location="build/biblioteca.jar"/>

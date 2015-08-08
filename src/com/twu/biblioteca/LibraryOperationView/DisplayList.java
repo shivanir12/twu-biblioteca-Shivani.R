@@ -3,13 +3,12 @@ package com.twu.biblioteca.LibraryOperationView;
 import com.twu.biblioteca.InputOutput;
 import com.twu.biblioteca.Model.Library;
 
-public class DisplayCheckedOutBookList implements LibraryOperationView {
-
+public class DisplayList implements LibraryOperationView {
 
     private Library library;
     private InputOutput inputOutput;
 
-    public DisplayCheckedOutBookList(Library library, InputOutput inputOutput) {
+    public DisplayList(Library library, InputOutput inputOutput) {
 
         this.library = library;
         this.inputOutput = inputOutput;
@@ -17,7 +16,7 @@ public class DisplayCheckedOutBookList implements LibraryOperationView {
 
     @Override
     public void show() {
-        String list = library.getCheckOutBookListFromLibrary();
+        String list = library.getBookListFromLibrary();
         inputOutput.show(list);
     }
 }
