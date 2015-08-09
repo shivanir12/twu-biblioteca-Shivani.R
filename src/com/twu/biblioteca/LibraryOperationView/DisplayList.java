@@ -15,7 +15,7 @@ public class DisplayList implements LibraryOperationView {
     }
 
     @Override
-    public void show() {
+    public void display() {
         String list = library.getBookListFromLibrary();
         inputOutput.show(list);
     }

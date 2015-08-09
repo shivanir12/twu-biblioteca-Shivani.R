@@ -15,7 +15,7 @@ public class DisplayCheckedOutMovieList implements LibraryOperationView {
     }
 
     @Override
-    public void show() {
+    public void display() {
         String list = library.getCheckOutMovieListFromLibrary();
         inputOutput.show(list);
     }

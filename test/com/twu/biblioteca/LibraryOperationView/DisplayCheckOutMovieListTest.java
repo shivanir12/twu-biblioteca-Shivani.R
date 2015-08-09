@@ -20,7 +20,7 @@ public class DisplayCheckOutMovieListTest {
 
         when(library.getCheckOutMovieListFromLibrary()).thenReturn("manam   1960   anup   9\n");
 
-        displayCheckedOutMovieList.show();
+        displayCheckedOutMovieList.display();
         verify(inputOutput).show("manam   1960   anup   9\n");
     }
 

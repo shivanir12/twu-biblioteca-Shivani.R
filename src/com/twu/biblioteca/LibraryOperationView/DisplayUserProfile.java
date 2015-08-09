@@ -14,7 +14,7 @@ public class DisplayUserProfile implements LibraryOperationView {
         this.user = user;
     }
     @Override
-    public void show(){
+    public void display(){
         inputOutput.show(user.toString());
     }
 }

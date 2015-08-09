@@ -3,20 +3,18 @@ package com.twu.biblioteca.LibraryOperationView;
 import com.twu.biblioteca.InputOutput;
 
 public class CheckOutMovieView implements LibraryOperationView {
-    private LibraryOperation libraryOperation;
+    private boolean result;
     private final InputOutput inputOutput;
 
-    public CheckOutMovieView(LibraryOperation libraryOperation, InputOutput inputOutput) {
+    public CheckOutMovieView(boolean result, InputOutput inputOutput) {
+        this.result = result;
 
-        this.libraryOperation = libraryOperation;
         this.inputOutput = inputOutput;
     }
 
     @Override
-    public void show(){
-        inputOutput.show("Enter the name of the movie to checkout");
-        String bookName = inputOutput.getStringInput();
-        if (libraryOperation.execute(bookName))
+    public void display(){
+        if (result)
             inputOutput.show("Thank you!! Enjoy the movie");
         else
             inputOutput.show("That movie is not available");

@@ -20,7 +20,7 @@ public class DisplayCheckedOutBookListTest {
 
         when(library.getCheckOutBookListFromLibrary()).thenReturn("Head First Java     sierra              1950\n");
 
-        displayCheckedOutBookList.show();
+        displayCheckedOutBookList.display();
         verify(inputOutput).show("Head First Java     sierra              1950\n");
     }
 }

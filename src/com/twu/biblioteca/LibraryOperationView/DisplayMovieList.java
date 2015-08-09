@@ -15,9 +15,8 @@ public class DisplayMovieList implements LibraryOperationView {
     }
 
     @Override
-    public void show() {
+    public void display() {
         String list = library.getMovieListFromLibrary();
         inputOutput.show(list);
     }
-
 }

@@ -15,7 +15,7 @@ public class DisplayUserProfileTest {
         User user1 = mock(User.class);
         DisplayUserProfile displayUserProfile = new DisplayUserProfile(inputOutput, user1);
 
-        displayUserProfile.show();
+        displayUserProfile.display();
         verify(inputOutput).show(user1.toString());
     }
     @Test
@@ -24,7 +24,7 @@ public class DisplayUserProfileTest {
         User user1 = mock(User.class);
         DisplayUserProfile displayUserProfile = new DisplayUserProfile(inputOutput, user1);
 
-        displayUserProfile.show();
+        displayUserProfile.display();
         verify(inputOutput).show(user1.toString());
     }
 }

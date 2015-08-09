@@ -31,48 +31,49 @@ public class Controller {
             LibraryOperationView libraryOperationView;
             if (choice.equals("1")) {
                 libraryOperationView = new DisplayList(library, inputOutput);
-                libraryOperationView.show();
+                libraryOperationView.display();
 
 
             } else if (choice.equals("2")) {
                 libraryOperation = new CheckOut(library, user);
-                libraryOperationView = new CheckOutBookView(libraryOperation, inputOutput);
-                libraryOperationView.show();
+                boolean result = libraryOperation.execute(inputOutput.getStringInput());
+                libraryOperationView = new CheckOutBookView(result, inputOutput);
+                libraryOperationView.display();
 
 
             } else if (choice.equals("3")) {
                 libraryOperation = new CheckIn(library, user);
-                libraryOperationView = new ReturnBookView(libraryOperation, inputOutput);
-                libraryOperationView.show();
+                libraryOperationView = new ReturnBookView(true, inputOutput);
+                libraryOperationView.display();
 
 
             } else if (choice.equals("4")) {
                 libraryOperationView = new DisplayMovieList(library, inputOutput);
-                libraryOperationView.show();
+                libraryOperationView.display();
 
 
             } else if (choice.equals("5")) {
                 libraryOperation = new CheckOutMovie(library, user);
-                libraryOperationView = new CheckOutMovieView(libraryOperation, inputOutput);
-                libraryOperationView.show();
+                libraryOperationView = new CheckOutMovieView(true, inputOutput);
+                libraryOperationView.display();
 
 
             } else if (choice.equals("6")) {
                 libraryOperation = new CheckInMovie(library, user);
-                libraryOperationView = new ReturnMovieView(libraryOperation, inputOutput);
-                libraryOperationView.show();
+                libraryOperationView = new ReturnMovieView(true, inputOutput);
+                libraryOperationView.display();
 
 
             } else if (choice.equals("7")) {
                 break;
             } else if (choice.equals("8")) {
                 libraryOperationView = new DisplayUserProfile(inputOutput, user);
-                libraryOperationView.show();
+                libraryOperationView.display();
 
             } else if (choice.equals("9")) {
                 if (user.isLibrarian()) {
                     libraryOperationView = new DisplayCheckedOutBookList(library, inputOutput);
-                    libraryOperationView.show();
+                    libraryOperationView.display();
                 } else
                     inputOutput.show("invalid option");
 
@@ -80,7 +81,7 @@ public class Controller {
             } else if (choice.equals("10")) {
                 if (user.isLibrarian()) {
                     libraryOperationView = new DisplayCheckedOutMovieList(library, inputOutput);
-                    libraryOperationView.show();
+                    libraryOperationView.display();
                 } else
                     inputOutput.show("invalid option");
 

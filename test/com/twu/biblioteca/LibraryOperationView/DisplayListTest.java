@@ -17,7 +17,7 @@ public class DisplayListTest {
 
         when(library.getBookListFromLibrary()).thenReturn("Head First Java     sierra              1950\n");
 
-        displayList.show();
+        displayList.display();
         verify(inputOutput).show("Head First Java     sierra              1950\n");
     }
 }

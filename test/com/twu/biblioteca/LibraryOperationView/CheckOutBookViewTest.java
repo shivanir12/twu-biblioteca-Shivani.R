@@ -11,15 +11,11 @@ public class CheckOutBookViewTest {
     public void callsTheCheckOutOperationAndDisplaysThankYouMessage() {
 
         InputOutput inputOutput = mock(InputOutput.class);
-        LibraryOperation libraryOperation = mock(CheckOut.class);
+        CheckOutBookView checkOutBookView = new CheckOutBookView(true, inputOutput);
 
-        CheckOutBookView checkOutBookView = new CheckOutBookView(libraryOperation, inputOutput);
+        checkOutBookView.display();
 
-        when(libraryOperation.execute(anyString())).thenReturn(true);
-
-        checkOutBookView.show();
-
-        verify(inputOutput, atLeast(1)).show("Thank you!! Enjoy the book");
+        verify(inputOutput).show("Thank you!! Enjoy the book");
     }
 
     @Test
@@ -28,11 +24,11 @@ public class CheckOutBookViewTest {
         InputOutput inputOutput = mock(InputOutput.class);
         LibraryOperation libraryOperation = mock(CheckOut.class);
 
-        CheckOutBookView checkOutBookView = new CheckOutBookView(libraryOperation, inputOutput);
+        CheckOutBookView checkOutBookView = new CheckOutBookView(true, inputOutput);
 
         when(libraryOperation.execute(anyString())).thenReturn(false);
 
-        checkOutBookView.show();
+        checkOutBookView.display();
         verify(inputOutput).show("That Book is not available");
     }
 }

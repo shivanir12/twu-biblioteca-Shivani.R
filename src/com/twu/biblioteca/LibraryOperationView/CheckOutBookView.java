@@ -4,20 +4,17 @@ import com.twu.biblioteca.InputOutput;
 
 public class CheckOutBookView implements LibraryOperationView {
 
-    private LibraryOperation libraryOperation;
-    private final InputOutput inputOutput;
+    private boolean result;
+    private InputOutput inputOutput;
 
-    public CheckOutBookView(LibraryOperation libraryOperation, InputOutput inputOutput) {
-
-        this.libraryOperation = libraryOperation;
+    public CheckOutBookView(boolean result, InputOutput inputOutput) {
+        this.result = result;
         this.inputOutput = inputOutput;
     }
 
     @Override
-    public void show(){
-        inputOutput.show("Enter the name of the book to checkout");
-        String bookName = inputOutput.getStringInput();
-        if (libraryOperation.execute(bookName))
+    public void display(){
+        if (result)
             inputOutput.show("Thank you!! Enjoy the book");
         else
             inputOutput.show("That Book is not available");

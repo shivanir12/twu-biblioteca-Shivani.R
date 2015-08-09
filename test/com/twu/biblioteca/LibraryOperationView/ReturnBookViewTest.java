@@ -13,11 +13,11 @@ public class ReturnBookViewTest {
         InputOutput inputOutput = mock(InputOutput.class);
         LibraryOperation libraryOperation = mock(CheckOut.class);
 
-        ReturnBookView returnBookView = new ReturnBookView(libraryOperation, inputOutput);
+        ReturnBookView returnBookView = new ReturnBookView(true, inputOutput);
 
         when(libraryOperation.execute(anyString())).thenReturn(true);
 
-        returnBookView.show();
+        returnBookView.display();
 
         verify(inputOutput, atLeast(1)).show("Thank you for returning the book");
     }
@@ -28,10 +28,10 @@ public class ReturnBookViewTest {
         InputOutput inputOutput = mock(InputOutput.class);
         LibraryOperation libraryOperation = mock(CheckOut.class);
 
-        ReturnBookView returnBookView = new ReturnBookView(libraryOperation, inputOutput);
+        ReturnBookView returnBookView = new ReturnBookView(false, inputOutput);
         when(libraryOperation.execute(anyString())).thenReturn(false);
 
-        returnBookView.show();
+        returnBookView.display();
         verify(inputOutput).show("That is not a valid book to return");
     }
 

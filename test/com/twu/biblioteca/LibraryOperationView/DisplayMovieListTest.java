@@ -18,7 +18,7 @@ public class DisplayMovieListTest {
 
         when(library.getMovieListFromLibrary()).thenReturn("manam   1960   anup   9\n");
 
-        displayMovieList.show();
+        displayMovieList.display();
         verify(inputOutput).show("manam   1960   anup   9\n");
     }
 }

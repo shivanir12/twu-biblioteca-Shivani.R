@@ -16,7 +16,7 @@ public class DisplayCheckedOutBookList implements LibraryOperationView {
     }
 
     @Override
-    public void show() {
+    public void display() {
         String list = library.getCheckOutBookListFromLibrary();
         inputOutput.show(list);
     }
