@@ -9,7 +9,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 
-public class CheckInTest {
+public class CheckInBookTest {
     @Test
     public void returnsTrueIfTheBookIsAvailableInTheCheckedOutBookList() {
         Library library = mock(Library.class);
