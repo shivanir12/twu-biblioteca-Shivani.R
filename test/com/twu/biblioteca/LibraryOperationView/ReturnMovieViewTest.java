@@ -11,7 +11,7 @@ public class ReturnMovieViewTest {
     public void callsTheCheckOutOperationAndDisplaysThankYouMessage() {
 
         InputOutput inputOutput = mock(InputOutput.class);
-        LibraryOperation libraryOperation = mock(CheckOut.class);
+        LibraryOperation libraryOperation = mock(CheckOutBook.class);
 
         ReturnMovieView returnMovieView = new ReturnMovieView(true, inputOutput);
 
@@ -26,7 +26,7 @@ public class ReturnMovieViewTest {
     public void callsTheCheckOutOperationAndDisplays() {
 
         InputOutput inputOutput = mock(InputOutput.class);
-        LibraryOperation libraryOperation = mock(CheckOut.class);
+        LibraryOperation libraryOperation = mock(CheckOutBook.class);
 
         ReturnBookView returnBookView = new ReturnBookView(false, inputOutput);
         when(libraryOperation.execute(anyString())).thenReturn(false);

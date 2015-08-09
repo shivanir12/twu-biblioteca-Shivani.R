@@ -13,22 +13,22 @@ public class CheckOutBookTest {
     public void returnsTrueIfTheBookIsAvailableInTheAvailableBookList() {
         Library library = mock(Library.class);
         User user = mock(User.class);
-        CheckOut checkOut = new CheckOut(library, user);
+        CheckOutBook checkOutBook = new CheckOutBook(library, user);
 
         when(library.checkoutBook("www", user)).thenReturn(true);
 
-        assertEquals(true, checkOut.execute("www"));
+        assertEquals(true, checkOutBook.execute("www"));
     }
 
     @Test
     public void returnsFalseIfTheBookIsNotAvailableInTheAvailableBookList() {
         Library library = mock(Library.class);
         User user = mock(User.class);
-        CheckOut checkOut = new CheckOut(library, user);
+        CheckOutBook checkOutBook = new CheckOutBook(library, user);
 
         when(library.checkoutBook("www", user)).thenReturn(false);
 
-        assertEquals(false, checkOut.execute("ds"));
+        assertEquals(false, checkOutBook.execute("ds"));
     }
 
 }

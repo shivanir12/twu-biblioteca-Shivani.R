@@ -35,14 +35,14 @@ public class Controller {
 
 
             } else if (choice.equals("2")) {
-                libraryOperation = new CheckOut(library, user);
+                libraryOperation = new CheckOutBook(library, user);
                 boolean result = libraryOperation.execute(inputOutput.getStringInput());
                 libraryOperationView = new CheckOutBookView(result, inputOutput);
                 libraryOperationView.display();
 
 
             } else if (choice.equals("3")) {
-                libraryOperation = new CheckIn(library, user);
+                libraryOperation = new CheckInBook(library, user);
                 libraryOperationView = new ReturnBookView(true, inputOutput);
                 libraryOperationView.display();
 

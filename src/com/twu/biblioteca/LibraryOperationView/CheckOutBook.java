@@ -4,12 +4,12 @@ package com.twu.biblioteca.LibraryOperationView;
 import com.twu.biblioteca.Model.Library;
 import com.twu.biblioteca.Model.User;
 
-public class CheckOut implements LibraryOperation {
+public class CheckOutBook implements LibraryOperation {
 
     private Library library;
     private User user;
 
-    public CheckOut(Library library, User user) {
+    public CheckOutBook(Library library, User user) {
 
         this.library = library;
         this.user = user;
