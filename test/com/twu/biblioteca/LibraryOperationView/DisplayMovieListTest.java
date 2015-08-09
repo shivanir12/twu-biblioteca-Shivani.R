@@ -8,13 +8,13 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class DisplayMovieListTest {
 
+public class DisplayMovieListTest {
     @Test
-    public void returnsTheListOfMovies() {
+    public void displaysTheListOfAvailableMovies() {
         Library library = mock(Library.class);
         InputOutput inputOutput = mock(InputOutput.class);
-        DisplayMovieList displayMovieList = new DisplayMovieList(library,inputOutput);
+        DisplayMovieList displayMovieList = new DisplayMovieList(library, inputOutput);
 
         when(library.getMovieListFromLibrary()).thenReturn("manam   1960   anup   9\n");
 

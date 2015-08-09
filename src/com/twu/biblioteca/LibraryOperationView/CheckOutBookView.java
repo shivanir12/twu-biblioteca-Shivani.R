@@ -2,6 +2,7 @@ package com.twu.biblioteca.LibraryOperationView;
 
 import com.twu.biblioteca.InputOutput;
 
+
 public class CheckOutBookView implements LibraryOperationView {
 
     private boolean result;
@@ -13,7 +14,7 @@ public class CheckOutBookView implements LibraryOperationView {
     }
 
     @Override
-    public void display(){
+    public void display() {
         if (result)
             inputOutput.show("Thank you!! Enjoy the book");
         else

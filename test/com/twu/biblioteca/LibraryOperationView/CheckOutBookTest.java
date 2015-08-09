@@ -1,12 +1,12 @@
 package com.twu.biblioteca.LibraryOperationView;
 
-
 import com.twu.biblioteca.Model.Library;
 import com.twu.biblioteca.Model.User;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
+
 
 public class CheckOutBookTest {
     @Test
@@ -30,5 +30,4 @@ public class CheckOutBookTest {
 
         assertEquals(false, checkOutBook.execute("ds"));
     }
-
 }

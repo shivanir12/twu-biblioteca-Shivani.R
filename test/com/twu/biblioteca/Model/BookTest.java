@@ -6,7 +6,6 @@ import static org.junit.Assert.assertEquals;
 
 
 public class BookTest {
-
     @Test
     public void toCheckIfBookIsAvailable() {
         Book book1 = new Book("Head First Java", "sierra", "1950");

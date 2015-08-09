@@ -1,10 +1,10 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.LibraryOperationView.Controller;
-import com.twu.biblioteca.InputOutput;
 import com.twu.biblioteca.Model.User;
 
 import java.util.ArrayList;
+
 
 public class LoginView {
     public String userName;
@@ -19,15 +19,15 @@ public class LoginView {
     }
 
     public void validateUserLoginDetails(InputOutput inputOutput, ArrayList<User> users, Controller controller) {
-            getLoginDetail(inputOutput);
-            int flag = 0;
-            for (User user : users) {
-                if (user.checkValidity(userName, password)) {
-                    flag = 1;
-                        controller.dispatcher(user);
-                }
+        getLoginDetail(inputOutput);
+        int flag = 0;
+        for (User user : users) {
+            if (user.checkValidity(userName, password)) {
+                flag = 1;
+                controller.dispatcher(user);
             }
-            if (flag == 0)
-                inputOutput.show("invalid userName/password");
+        }
+        if (flag == 0)
+            inputOutput.show("invalid userName/password");
     }
 }

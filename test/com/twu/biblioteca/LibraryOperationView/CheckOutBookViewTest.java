@@ -5,10 +5,10 @@ import org.junit.Test;
 
 import static org.mockito.Mockito.*;
 
+
 public class CheckOutBookViewTest {
     @Test
-    public void callsTheCheckOutOperationAndDisplaysThankYouMessage() {
-
+    public void displaysAThankYouMessageIfTheBookIsCheckedOutFromAvailableBookList() {
         InputOutput inputOutput = mock(InputOutput.class);
         CheckOutBookView checkOutBookView = new CheckOutBookView(true, inputOutput);
 
@@ -18,8 +18,7 @@ public class CheckOutBookViewTest {
     }
 
     @Test
-    public void callsTheCheckOutOperationAndDisplaysInvalidMessageIfBookIsNotAvailable() {
-
+    public void displaysInvalidMessageIfTheBookIsNotCheckedOutFromAvailableBookList() {
         InputOutput inputOutput = mock(InputOutput.class);
         CheckOutBookView checkOutBookView = new CheckOutBookView(false, inputOutput);
 

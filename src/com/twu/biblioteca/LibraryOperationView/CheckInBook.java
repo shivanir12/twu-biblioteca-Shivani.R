@@ -8,7 +8,7 @@ public class CheckInBook implements LibraryOperation {
     private Library library;
     private User user;
 
-    public CheckInBook(Library library, User user){
+    public CheckInBook(Library library, User user) {
 
         this.library = library;
         this.user = user;
@@ -16,7 +16,7 @@ public class CheckInBook implements LibraryOperation {
 
     @Override
     public boolean execute(String bookName) {
-        return library.checkInBook(bookName,user);
+        return library.checkInBook(bookName, user);
     }
 
 }

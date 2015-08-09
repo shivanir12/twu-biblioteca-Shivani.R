@@ -15,8 +15,6 @@ public class Book {
         this.yearOfPublication = yearOfPublication;
     }
 
-
-
     public String getYearOfPublication() {
 
         return yearOfPublication;
@@ -32,7 +30,7 @@ public class Book {
         return bookName;
     }
 
-    public boolean hasTitle(String name){
+    public boolean hasTitle(String name) {
         return bookName.equalsIgnoreCase(name);
     }
 }

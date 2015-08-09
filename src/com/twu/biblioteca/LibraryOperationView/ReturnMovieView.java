@@ -2,6 +2,7 @@ package com.twu.biblioteca.LibraryOperationView;
 
 import com.twu.biblioteca.InputOutput;
 
+
 public class ReturnMovieView implements LibraryOperationView {
     private boolean result;
     private final InputOutput inputOutput;
@@ -13,7 +14,7 @@ public class ReturnMovieView implements LibraryOperationView {
     }
 
     @Override
-    public void display(){
+    public void display() {
         if (result)
             inputOutput.show("Thank you for returning the movie");
         else

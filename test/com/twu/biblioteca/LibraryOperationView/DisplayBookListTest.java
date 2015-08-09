@@ -8,16 +8,17 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class DisplayListTest {
+
+public class DisplayBookListTest {
     @Test
-    public void returnsTheListOfBooks() {
+    public void displaysTheListOfAvailableBooks() {
         Library library = mock(Library.class);
         InputOutput inputOutput = mock(InputOutput.class);
-        DisplayList displayList = new DisplayList(library,inputOutput);
+        DisplayBookList displayBookList = new DisplayBookList(library,inputOutput);
 
         when(library.getBookListFromLibrary()).thenReturn("Head First Java     sierra              1950\n");
 
-        displayList.display();
+        displayBookList.display();
         verify(inputOutput).show("Head First Java     sierra              1950\n");
     }
 }

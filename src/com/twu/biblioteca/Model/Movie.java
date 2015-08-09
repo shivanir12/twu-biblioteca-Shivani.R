@@ -1,5 +1,6 @@
 package com.twu.biblioteca.Model;
 
+
 public class Movie {
     private final String movieName;
     private final String year;
@@ -18,7 +19,7 @@ public class Movie {
         this.movieRating = movieRating;
     }
 
-    public boolean hasTitle(String movieName){
+    public boolean hasTitle(String movieName) {
         return this.movieName.equalsIgnoreCase(movieName);
     }
 

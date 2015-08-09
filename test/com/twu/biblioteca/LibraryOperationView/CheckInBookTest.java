@@ -20,6 +20,7 @@ public class CheckInBookTest {
 
         assertEquals(true, checkInBook.execute("www"));
     }
+
     @Test
     public void returnsFalseIfTheBookIsNotAvailableInTheCheckedOutBookList() {
         Library library = mock(Library.class);

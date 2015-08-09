@@ -2,8 +2,8 @@ package com.twu.biblioteca.LibraryOperationView;
 
 import com.twu.biblioteca.InputOutput;
 
-public class ReturnBookView implements LibraryOperationView {
 
+public class ReturnBookView implements LibraryOperationView {
     private boolean result;
     private final InputOutput inputOutput;
 
@@ -14,7 +14,7 @@ public class ReturnBookView implements LibraryOperationView {
     }
 
     @Override
-    public void display(){
+    public void display() {
         if (result)
             inputOutput.show("Thank you for returning the book");
         else

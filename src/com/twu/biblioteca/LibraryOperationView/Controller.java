@@ -29,8 +29,9 @@ public class Controller {
             String choice = inputOutput.getStringInput();
             LibraryOperation libraryOperation;
             LibraryOperationView libraryOperationView;
+
             if (choice.equals("1")) {
-                libraryOperationView = new DisplayList(library, inputOutput);
+                libraryOperationView = new DisplayBookList(library, inputOutput);
                 libraryOperationView.display();
 
 
@@ -43,7 +44,8 @@ public class Controller {
 
             } else if (choice.equals("3")) {
                 libraryOperation = new CheckInBook(library, user);
-                libraryOperationView = new ReturnBookView(true, inputOutput);
+                boolean result = libraryOperation.execute(inputOutput.getStringInput());
+                libraryOperationView = new ReturnBookView(result, inputOutput);
                 libraryOperationView.display();
 
 
@@ -54,13 +56,15 @@ public class Controller {
 
             } else if (choice.equals("5")) {
                 libraryOperation = new CheckOutMovie(library, user);
-                libraryOperationView = new CheckOutMovieView(true, inputOutput);
+                boolean result = libraryOperation.execute(inputOutput.getStringInput());
+                libraryOperationView = new CheckOutMovieView(result, inputOutput);
                 libraryOperationView.display();
 
 
             } else if (choice.equals("6")) {
                 libraryOperation = new CheckInMovie(library, user);
-                libraryOperationView = new ReturnMovieView(true, inputOutput);
+                boolean result = libraryOperation.execute(inputOutput.getStringInput());
+                libraryOperationView = new ReturnMovieView(result, inputOutput);
                 libraryOperationView.display();
 
 
@@ -82,14 +86,11 @@ public class Controller {
                 if (user.isLibrarian()) {
                     libraryOperationView = new DisplayCheckedOutMovieList(library, inputOutput);
                     libraryOperationView.display();
-                } else
+                } else {
                     inputOutput.show("invalid option");
-
-
+                }
             } else {
                 inputOutput.show("invalid option");
-
-
             }
         }
     }

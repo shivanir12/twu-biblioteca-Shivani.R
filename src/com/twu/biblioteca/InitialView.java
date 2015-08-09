@@ -12,7 +12,7 @@ public class InitialView {
     private final UserMenuView userMenuView;
     private Controller controller;
 
-    public InitialView(InputOutput inputOutput, ArrayList<User> users, LoginView loginView,UserMenuView userMenuView, Controller controller){
+    public InitialView(InputOutput inputOutput, ArrayList<User> users, LoginView loginView, UserMenuView userMenuView, Controller controller) {
 
         this.inputOutput = inputOutput;
         this.users = users;
@@ -21,7 +21,7 @@ public class InitialView {
         this.controller = controller;
     }
 
-    public void showInitialMenu(){
+    public void showStartMenu() {
         while (true) {
             inputOutput.show("1.Login\n2.Quit\n");
             String option = inputOutput.getStringInput();

@@ -19,7 +19,6 @@ public class Library {
         this.checkOutMovieDetails = checkOutMovieDetails;
     }
 
-
     public String getBookListFromLibrary() {
         String bookDetails = "";
         for (Book book : availableBookList) {

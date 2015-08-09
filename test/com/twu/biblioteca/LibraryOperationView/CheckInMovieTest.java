@@ -8,6 +8,7 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+
 public class CheckInMovieTest {
     @Test
     public void returnsTrueIfTheMovieIsAvailableInTheCheckedOutMovieList() {
@@ -30,6 +31,4 @@ public class CheckInMovieTest {
 
         assertEquals(false, checkInMovie.execute("manam"));
     }
-
-
 }
