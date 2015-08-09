@@ -20,4 +20,15 @@ public class CheckOutTest {
         assertEquals(true, checkOut.execute("www"));
     }
 
+    @Test
+    public void returnsFalseIfTheBookIsNotAvailableInTheAvailableBookList() {
+        Library library = mock(Library.class);
+        User user = mock(User.class);
+        CheckOut checkOut = new CheckOut(library, user);
+
+        when(library.checkoutBook("www", user)).thenReturn(false);
+
+        assertEquals(false, checkOut.execute("ds"));
+    }
+
 }
