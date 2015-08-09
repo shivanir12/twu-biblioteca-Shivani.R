@@ -10,7 +10,7 @@ import static org.mockito.Mockito.when;
 
 public class CheckInMovieTest {
     @Test
-    public void returnsTrueIfTheMovieIsAvailableInTheAvailableMovieList() {
+    public void returnsTrueIfTheMovieIsAvailableInTheCheckedOutMovieList() {
         Library library = mock(Library.class);
         User user = mock(User.class);
         CheckInMovie checkInMovie = new CheckInMovie(library, user);
@@ -18,6 +18,17 @@ public class CheckInMovieTest {
         when(library.checkInMovie("manam", user)).thenReturn(true);
 
         assertEquals(true, checkInMovie.execute("manam"));
+    }
+
+    @Test
+    public void returnsFalseIfTheMovieIsNotAvailableInTheCheckedOutMovieList() {
+        Library library = mock(Library.class);
+        User user = mock(User.class);
+        CheckInMovie checkInMovie = new CheckInMovie(library, user);
+
+        when(library.checkInMovie("manam", user)).thenReturn(false);
+
+        assertEquals(false, checkInMovie.execute("manam"));
     }
 
 
