@@ -20,4 +20,15 @@ public class CheckOutMovieTest {
 
         assertEquals(true, checkOutMovie.execute("manam"));
     }
+
+    @Test
+    public void returnsFalseIfTheMovieIsNotAvailableInTheAvailableMovieList() {
+        Library library = mock(Library.class);
+        User user = mock(User.class);
+        CheckOutMovie checkOutMovie = new CheckOutMovie(library, user);
+
+        when(library.checkoutMovie("manam", user)).thenReturn(false);
+
+        assertEquals(false, checkOutMovie.execute("manam"));
+    }
 }
