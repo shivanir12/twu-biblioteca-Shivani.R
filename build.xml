@@ -8,7 +8,8 @@
         <fileset dir="${lib.dir}" includes="junit-4.11.jar"/>
         <fileset dir="${lib.dir}" includes="mockito-all-1.9.5.jar"/>
     </path>
-
+    <delete dir = "out"/>
+    <mkdir dir = "out"/>
     <target name="compile">
         <javac srcdir="src" includeantruntime="false" destdir="out" classpathref="classpath"/>
         <javac srcdir="test" includeantruntime="false" destdir="out" classpathref="classpath"/>
@@ -16,7 +17,28 @@
 
     <target name="runjunit" depends="compile">
         <junit haltonfailure="true" printsummary="true" showoutput="yes">
-            <test name="com.twu.biblioteca.InputOutputTest"/>
+            <test name="com.twu.biblioteca.io.InputOutputTest"/>
+            <test name="com.twu.biblioteca.LibraryOperation.CheckInMovieTest"/>
+            <test name="com.twu.biblioteca.LibraryOperation.CheckOutMovieTest"/>
+            <test name="com.twu.biblioteca.LibraryOperation.CheckInBookTest"/>
+            <test name="com.twu.biblioteca.LibraryOperation.CheckOutBookTest"/>
+            <test name="com.twu.biblioteca.LibraryOperationView.CheckOutBookViewTest"/>
+            <test name="com.twu.biblioteca.LibraryOperationView.CheckOutMovieViewTest"/>
+            <test name="com.twu.biblioteca.LibraryOperationView.DisplayBookListTest"/>
+            <test name="com.twu.biblioteca.LibraryOperationView.DisplayCheckedOutBookListTest"/>
+            <test name="com.twu.biblioteca.LibraryOperationView.DisplayCheckedOutMovieListTest"/>
+            <test name="com.twu.biblioteca.LibraryOperationView.DisplayMovieListTest"/>
+            <test name="com.twu.biblioteca.LibraryOperationView.DisplayUserProfileTest"/>
+            <test name="com.twu.biblioteca.LibraryOperationView.ReturnBookViewTest"/>
+            <test name="com.twu.biblioteca.LibraryOperationView.ReturnMovieViewTest"/>
+            <test name="com.twu.biblioteca.Model.BookTest"/>
+            <test name="com.twu.biblioteca.Model.LibraryTest"/>
+            <test name="com.twu.biblioteca.Model.MovieTest"/>
+            <test name="com.twu.biblioteca.Model.UserTest"/>
+            <test name="com.twu.biblioteca.view.ApplicationTest"/>
+            <test name="com.twu.biblioteca.view.LoginViewTest"/>
+            <test name="com.twu.biblioteca.view.UserMenuViewTest"/>
+
             <classpath>
                 <pathelement location="out"/>
                 <path refid="classpath"/>
@@ -31,13 +53,13 @@
              includes="**/*.class">
             <manifest>
                 <attribute name="Main-Class"
-                           value="com.twu.biblioteca.Model.Main"/>
+                           value="com.twu.biblioteca.Main"/>
             </manifest>
         </jar>
     </target>
 
     <target name="runjar" depends="buildjar">
-        <java fork="true" classname="com.twu.biblioteca.Model.Main">
+        <java fork="true" classname="com.twu.biblioteca.Main">
             <classpath>
                 <path refid="classpath"/>
                 <path location="build/biblioteca.jar"/>

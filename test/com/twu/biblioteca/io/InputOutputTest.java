@@ -1,5 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.io;
 
+import com.twu.biblioteca.io.InputOutput;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;

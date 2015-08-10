@@ -1,6 +1,8 @@
 package com.twu.biblioteca.LibraryOperationView;
 
-import com.twu.biblioteca.InputOutput;
+import com.twu.biblioteca.io.InputOutput;
+import com.twu.biblioteca.LibraryOperation.CheckOutBook;
+import com.twu.biblioteca.LibraryOperation.LibraryOperation;
 import org.junit.Test;
 
 import static org.mockito.Matchers.anyString;

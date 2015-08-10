@@ -1,20 +1,19 @@
 package com.twu.biblioteca.view;
 
 
-import com.twu.biblioteca.InputOutput;
+import com.twu.biblioteca.io.InputOutput;
 
 public class UserMenuView {
     private InputOutput inputOutput;
 
     public UserMenuView(InputOutput inputOutput) {
-
         this.inputOutput = inputOutput;
     }
 
     public void showCustomerMenu() {
         String menu = "";
         menu += "--*Main Menu*--\n" +
-                "================================\n"+
+                "================================\n" +
                 "Enter 1 to Display list of books\n" +
                 "Enter 2 to Checkout book\n" +
                 "Enter 3 to Return book\n" +
@@ -26,10 +25,11 @@ public class UserMenuView {
         inputOutput.show(menu);
         inputOutput.show("Enter the choice");
     }
-    public void showLibrarianMenu(){
+
+    public void showLibrarianMenu() {
         String menu = "";
         menu += "--*Main Menu*--\n" +
-                "================================\n"+
+                "================================\n" +
                 "Enter 1 to Display list of books\n" +
                 "Enter 2 to Checkout book\n" +
                 "Enter 3 to Return book\n" +

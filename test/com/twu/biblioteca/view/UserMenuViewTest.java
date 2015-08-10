@@ -1,5 +1,7 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.view;
 
+import com.twu.biblioteca.io.InputOutput;
+import com.twu.biblioteca.view.UserMenuView;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;

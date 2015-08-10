@@ -1,4 +1,4 @@
-package com.twu.biblioteca.LibraryOperationView;
+package com.twu.biblioteca.LibraryOperation;
 
 import com.twu.biblioteca.Model.Library;
 import com.twu.biblioteca.Model.User;

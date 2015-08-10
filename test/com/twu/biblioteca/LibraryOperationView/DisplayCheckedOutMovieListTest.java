@@ -1,6 +1,6 @@
 package com.twu.biblioteca.LibraryOperationView;
 
-import com.twu.biblioteca.InputOutput;
+import com.twu.biblioteca.io.InputOutput;
 import com.twu.biblioteca.Model.Library;
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 
-public class DisplayCheckOutMovieListTest {
+public class DisplayCheckedOutMovieListTest {
     @Test
     public void displaysTheListOfCheckedOutMovies() {
         Library library = mock(Library.class);

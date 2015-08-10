@@ -1,4 +1,4 @@
-package com.twu.biblioteca.LibraryOperationView;
+package com.twu.biblioteca.LibraryOperation;
 
 
 public interface LibraryOperation {

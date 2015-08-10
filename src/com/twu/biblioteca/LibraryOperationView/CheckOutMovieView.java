@@ -1,6 +1,6 @@
 package com.twu.biblioteca.LibraryOperationView;
 
-import com.twu.biblioteca.InputOutput;
+import com.twu.biblioteca.io.InputOutput;
 
 
 public class CheckOutMovieView implements LibraryOperationView {

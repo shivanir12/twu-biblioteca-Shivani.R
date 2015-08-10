@@ -1,7 +1,9 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.view;
 
-import com.twu.biblioteca.LibraryOperationView.Controller;
+import com.twu.biblioteca.controller.Controller;
 import com.twu.biblioteca.Model.User;
+import com.twu.biblioteca.io.InputOutput;
+import com.twu.biblioteca.view.LoginView;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -28,7 +30,7 @@ public class LoginViewTest {
     }
 
     @Test
-    public void displaysAMessageIfUserCredentialsAreINValid() {
+    public void displaysAMessageIfUserCredentialsAreInvalid() {
         LoginView loginView = new LoginView();
         InputOutput inputOutput = mock(InputOutput.class);
         User user1 = mock(User.class);

@@ -1,14 +1,15 @@
-package com.twu.biblioteca.LibraryOperationView;
+package com.twu.biblioteca.LibraryOperation;
 
 import com.twu.biblioteca.Model.Library;
 import com.twu.biblioteca.Model.User;
 
 
-public class CheckInBook implements LibraryOperation {
+public class CheckOutBook implements LibraryOperation {
+
     private Library library;
     private User user;
 
-    public CheckInBook(Library library, User user) {
+    public CheckOutBook(Library library, User user) {
 
         this.library = library;
         this.user = user;
@@ -16,7 +17,6 @@ public class CheckInBook implements LibraryOperation {
 
     @Override
     public boolean execute(String bookName) {
-        return library.checkInBook(bookName, user);
+        return library.checkoutBook(bookName, user);
     }
-
 }

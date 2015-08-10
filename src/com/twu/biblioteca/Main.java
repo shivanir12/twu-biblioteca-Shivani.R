@@ -1,11 +1,15 @@
-package com.twu.biblioteca.Model;
+package com.twu.biblioteca;
 
-import com.twu.biblioteca.*;
-import com.twu.biblioteca.LibraryOperationView.Controller;
-import com.twu.biblioteca.InputOutput;
-import com.twu.biblioteca.InitialView;
-import com.twu.biblioteca.LoginView;
-import com.twu.biblioteca.UserMenuView;
+import com.twu.biblioteca.Model.Book;
+import com.twu.biblioteca.Model.Library;
+import com.twu.biblioteca.Model.Movie;
+import com.twu.biblioteca.Model.User;
+import com.twu.biblioteca.controller.Controller;
+import com.twu.biblioteca.io.InputOutput;
+import com.twu.biblioteca.view.Application;
+import com.twu.biblioteca.view.InitialView;
+import com.twu.biblioteca.view.LoginView;
+import com.twu.biblioteca.view.UserMenuView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
