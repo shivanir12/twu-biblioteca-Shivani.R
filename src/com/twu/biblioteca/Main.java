@@ -6,7 +6,7 @@ import com.twu.biblioteca.Model.Movie;
 import com.twu.biblioteca.Model.User;
 import com.twu.biblioteca.controller.Controller;
 import com.twu.biblioteca.io.InputOutput;
-import com.twu.biblioteca.view.Application;
+import com.twu.biblioteca.view.WelcomeView;
 import com.twu.biblioteca.view.InitialView;
 import com.twu.biblioteca.view.LoginView;
 import com.twu.biblioteca.view.UserMenuView;
@@ -48,8 +48,8 @@ public class Main {
 
         UserMenuView userMenuView = new UserMenuView(inputOutput);
 
-        Application application = new Application(inputOutput);
-        application.showWelcomeMessage();
+        WelcomeView welcomeView = new WelcomeView(inputOutput);
+        welcomeView.showWelcomeMessage();
         Controller controller = new Controller(inputOutput, library, userMenuView);
 
         LoginView loginView = new LoginView();

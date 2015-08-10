@@ -35,7 +35,7 @@
             <test name="com.twu.biblioteca.Model.LibraryTest"/>
             <test name="com.twu.biblioteca.Model.MovieTest"/>
             <test name="com.twu.biblioteca.Model.UserTest"/>
-            <test name="com.twu.biblioteca.view.ApplicationTest"/>
+            <test name="com.twu.biblioteca.view.WelcomeViewTest"/>
             <test name="com.twu.biblioteca.view.LoginViewTest"/>
             <test name="com.twu.biblioteca.view.UserMenuViewTest"/>
 
