@@ -1,9 +1,8 @@
 package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.controller.Controller;
-import com.twu.biblioteca.Model.User;
+import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.io.InputOutput;
-import com.twu.biblioteca.view.LoginView;
 import org.junit.Test;
 
 import java.util.ArrayList;

@@ -1,6 +1,7 @@
 DESCRIPTION
 ===========
-To design Bibliotica which is a library management system.
+To design Bibliotica which is a library management system. The application provides multiple options such as display books, display movies,
+checkin books, checkin movies, checkout books, checkout movies, view profile, login and logout.
 
 
 SETUP

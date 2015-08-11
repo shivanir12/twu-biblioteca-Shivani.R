@@ -2,10 +2,10 @@ package com.twu.biblioteca.controller;
 
 
 import com.twu.biblioteca.io.InputOutput;
-import com.twu.biblioteca.LibraryOperation.*;
-import com.twu.biblioteca.LibraryOperationView.*;
-import com.twu.biblioteca.Model.Library;
-import com.twu.biblioteca.Model.User;
+import com.twu.biblioteca.libraryOperation.*;
+import com.twu.biblioteca.libraryOperationView.*;
+import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.view.UserMenuView;
 
 //Accepts the choice and calls the associated methods

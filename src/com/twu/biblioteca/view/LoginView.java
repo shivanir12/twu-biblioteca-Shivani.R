@@ -2,7 +2,7 @@ package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.io.InputOutput;
 import com.twu.biblioteca.controller.Controller;
-import com.twu.biblioteca.Model.User;
+import com.twu.biblioteca.model.User;
 
 import java.util.ArrayList;
 

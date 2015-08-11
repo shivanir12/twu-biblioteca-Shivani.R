@@ -1,9 +1,9 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.Model.Book;
-import com.twu.biblioteca.Model.Library;
-import com.twu.biblioteca.Model.Movie;
-import com.twu.biblioteca.Model.User;
+import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.model.Movie;
+import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.controller.Controller;
 import com.twu.biblioteca.io.InputOutput;
 import com.twu.biblioteca.view.WelcomeView;
