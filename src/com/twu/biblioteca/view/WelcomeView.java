@@ -15,5 +15,4 @@ public class WelcomeView {
     public void showWelcomeMessage() {
         view.show("WELCOME TO BIBLIOTECA");
     }
-
 }
